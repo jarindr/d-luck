@@ -18,15 +18,29 @@ const PreviewListSection = React.createClass({
       shouldPlay: false
     }
   },
+  onClickShare (url, type) {
+    const $window = $(window)
+    const height = $window.height()
+    const width = $window.width()
+    const top = (height / 2) - 125
+    const left = (width / 2) - 300
+    const urlSharer = type === 'facebook' ? `https://www.facebook.com/sharer/sharer.php?u=${url}` : `https://twitter.com/intent/tweet?url=${url}`
+    window.open(urlSharer, 'targetWindow', `toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250,top=${top},left=${left}`)
+  },
   renderPreviewBlocks () {
-    return this.props.data.map(x => {
+    return this.props.data.map((x, i) => {
       const imageUrl = /(youtube)/.test(x.url)
-        ? `http://img.youtube.com/vi/${getYouTubeID(x.url)}/maxresdefault.jpg`
-        : x.url
+      ? `https://img.youtube.com/vi/${getYouTubeID(x.url)}/maxresdefault.jpg`
+      : x.url
       return (
-        <div key={imageUrl} className={styles.previewBlock} onClick={this.onClickPreviewBlock.bind(null, x)}>
-          <img src={imageUrl} className={styles.previewImage} />
-          <div className={styles.caption}>{x.caption}</div>
+        <div>
+          <div key={imageUrl} className={styles.previewBlock} onClick={this.onClickPreviewBlock.bind(null, i)} style={{background: `url(${imageUrl}) center no-repeat`, backgroundSize: 'cover'}}>
+            <img src={require('../assets/images/play_new.png')} style={{width: '40px'}} />
+          </div>
+          <div className={styles.caption}>
+            {x.caption}
+            <div style={{opacity: 0.5}}>{x.subCaption.substr(1, 20) || ''}</div>
+          </div>
         </div>
       )
     })
@@ -45,21 +59,30 @@ const PreviewListSection = React.createClass({
       ? `https://img.youtube.com/vi/${getYouTubeID(this.props.current.url)}/maxresdefault.jpg`
       : this.props.current.url
     return (
-      <div className={styles.mainImagePreviewContainer} onClick={this.onClickPlay}>
-        <div className={styles.closeModal} onClick={this.props.closeModal}>X</div>
-        <div className={styles.playButton}>
-          <img src={require('../assets/images/play.png')} className={styles.playButton} />
+      <div className={styles.mainImagePreviewContainer} style={{background: `url(${imageUrl}) center no-repeat`, backgroundSize: 'cover'}}>
+        <img src={require('../assets/images/closeButton.png')} className={styles.closeModal} onClick={this.props.closeModal} />
+        <div className={styles.captionContainer}>
+          <div className={styles.caption}>Making the show od tempor incididunt ut labore et dolore</div>
+          <img src={require('../assets/images/play_new.png')} className={styles.playButton} onClick={this.onClickPlay} />
         </div>
-        <div className={styles.imageOverlay}></div>
-        <img src={imageUrl} />
+        <img src={require('../assets/images/twitter.png')} className={styles.twitter} onClick={this.onClickShare.bind(null, this.props.current.url, 'twitter')} />
+        <img src={require('../assets/images/fb.png')} className={styles.fb} onClick={this.onClickShare.bind(null, this.props.current.url, 'facebook')} />
       </div>
     )
   },
   renderVideoPreview () {
-    const videoUrl = `https://www.youtube.com/embed/${getYouTubeID(this.props.current.url)}?rel=0&amp;autoplay=1`
     return (
       <div className={styles.iframeContainer}>
-        <iframe width="100%" height='100%' src={videoUrl} frameBorder="0" allowFullScreen></iframe>
+        <img src={require('../assets/images/closeButton.png')} className={styles.closeModal} onClick={this.props.closeModal} />
+        <img src={require('../assets/images/twitter.png')} className={styles.twitter} onClick={this.onClickShare.bind(null, this.props.current.url, 'twitter')} />
+        <img src={require('../assets/images/fb.png')} className={styles.fb} onClick={this.onClickShare.bind(null, this.props.current.url, 'facebook')} />
+        <iframe
+          width="100%"
+          height='100%'
+          src={`https://www.youtube.com/embed/${getYouTubeID(this.props.current.url)}?theme=dark&color=white&autoplay=1&keyboard=1&autohide=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3"frameborder="1"`}
+          frameBorder="0"
+          allowFullScreen>
+        </iframe>
       </div>
     )
   },

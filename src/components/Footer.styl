@@ -1,71 +1,40 @@
-.socialBlock
-  position: relative;
-  width: calc(100% / 6)
-  height: 200px
-  display: inline-block;
-.socialCaption
-  position: absolute;
-  left: 0
-  right: 0
-  bottom: 0
-  top: 0
-  width: 100%
-  height: 100%
-  background-color: rgba(0, 0, 0, 0.5);
-.newsLetter
-  text-align: center
-  padding: 40px 0
-  color: white
-  background-color: #be9b42
-  font-family: Montserrat
-  h1
-    font-size: 25px
-    margin: 0
-  .joinUsButton
-    background-color: white
-    color: black
-    padding: 5px 20px
-    display: table;
-    margin: 0 auto
-  input
-    text-align: center;
-    margin: 30px 0
-    background: none
-    border-top: none
-    border-left: none
-    border-right: none
-    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
-    color: white
-    width: 100%
-    max-width: 500px
-    padding-bottom: 5px
-    &:focus
-      outline-color: transparent;
-      outline-style: none;
-    &::placeholder
-      font-family: Montserrat
-      font-size: 20px
-      text-align: center;
-      color: white
-      opacity: 0.4
+.footerBar
+  color: #a8a8a8
+  font-family: Montserrat;
+  font-size: 12px
+  background: #f0f0f0
+  padding: 15px 5%
 .siteMapContact
-  color: white
+  color: black
   padding: 30px 5%
+  font-family: Montserrat
   ul
-    padding: 0 10px
+    padding: 0 10px 0 0
     li
       list-style-type: none;
       font-size: 12px;
       opacity: 0.6
       cursor: pointer;
+      padding: 2px 0
+      color: black
       &:first-child
         margin-bottom: 10px
         opacity: 1
         font-size: 18px
+    li:hover
+      opacity: 1
+      a
+        list-style-type: none;
+        text-decoration: none
+        color: inherit;
   .fax
-    margin: 10px 0
+    margin: 5px 0
     opacity: 1
     font-size: 18px
+  .socialText
+    opacity: 1
+    font-size: 18px
+    margin-top: 10px
   .siteMapBlock
     width: 33.33%
     display: inline-block;
@@ -83,21 +52,26 @@
       background: white
       color: black
       display: table;
-      padding: 5px 10px
+      padding: 7px 10px
       margin-top: 5px
+      font-family: Montserrat
       cursor: pointer;
-      font-size: 12px
+      font-size: 8px
+      background-color: #e2e2e2
     .contactFrom
+      margin-top: 32px
       input
         display: inline-block;
         width 200px
         padding: 5px
         border: 0
         margin 5px 5px 5px 0
+        background-color: #e2e2e2
         &::placeholder
           font-family: Montserrat
           font-size: 12px
       textarea
+        background-color: #e2e2e2
         display: block
         resize: none
         padding: 5px
@@ -107,3 +81,27 @@
         &::placeholder
           font-family: Montserrat
           font-size: 12px
+.social
+  margin-top: 25px
+  opacity: 1!important
+  img
+    height: 25px
+    margin-right: 20px
+@media screen and (max-width:768px)
+  .siteMapContact
+    .siteMap
+      width: 100%
+    .contact
+      width: 100%
+      .contactFrom
+        input
+          width: 100%
+        textarea
+          width: 100%
+
+@media screen and (max-width:450px)
+  .siteMapContact
+    .siteMap
+      display: none
+    .siteMapBlock
+      width: 100%
