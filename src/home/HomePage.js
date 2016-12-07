@@ -1,10 +1,10 @@
 import Footer from '../components/Footer'
 import IntroSection from './IntroSection'
 import KaanGallerySection from './KaanGallerySection'
+import LocationSection from './LocationSection'
 import MakingTheShowSection from './MakingTheShowSection'
 import React from 'react'
 import SeatingPlanSection from './SeatingPlanSection'
-import TheStorySection from './TheStorySection'
 import WorldOfKaanSection from './WorldOfKaanSection'
 import { checkRectIntersection } from '../utils/intersection'
 import scrollTo from 'scroll-to-element'
@@ -103,7 +103,7 @@ const MainPage = React.createClass({
             <KaanGallerySection />
           </div>
           <div ref='LOCATION MAP' id='LOCATION-MAP'>
-            <MakingTheShowSection />
+            <LocationSection />
           </div>
         </div>
         <Footer />

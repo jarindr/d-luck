@@ -18,17 +18,20 @@ const SeatingPlanSection = React.createClass({
       this.setState({current: state})
     }
   },
+  getStyleForCurrent (state) {
+    return this.state.current === state ? {opacity: 1, zIndex: 2} : {opacity: 0, zIndex: 1}
+  },
   render () {
     return (
       <div className={styles.container}>
         <div className={styles.mapContainer}>
-          <img src={require('../assets/images/map.png')} useMap="#Map" style={{opacity: this.state.current === 'all' ? 1 : 0, zIndex: 10}} />
+
           <img src={require('../assets/images/sky-map.png')} style={{opacity: this.state.current === 'sky' ? 1 : 0}} />
           <img src={require('../assets/images/star-map.png')} style={{opacity: this.state.current === 'star' ? 1 : 0}} />
           <img src={require('../assets/images/ocean-map.png')} style={{opacity: this.state.current === 'ocean' ? 1 : 0}} />
           <img src={require('../assets/images/cloud-map.png')} style={{opacity: this.state.current === 'cloud' ? 1 : 0}} />
           <map name="Map" id="Map">
-            <img src="url/to/your/image.jpg" alt="" useMap="#Map" />
+            <img src={require('../assets/images/map.png')} useMap="#Map" style={{opacity: this.state.current === 'all' ? 1 : 0, zIndex: 10}} />
             <area
               shape="poly"
               coords="23,80,171,15,207,27,360,4,651,13,710,2,832,22,951,42,1003,77,1005,198,1005,475,991,498,837,395,892,241,799,193,651,146,648,94,621,83,561,76,489,82,432,81,388,90,364,163,237,191,132,243,216,420,49,529,11,482"
@@ -52,7 +55,7 @@ const SeatingPlanSection = React.createClass({
           </map>
         </div>
         <div className={styles.contentContainer}>
-          <div className={styles.content} style={{opacity: this.state.current === 'all' ? 1 : 0, zIndex: 2}}>
+          <div className={styles.content} style={this.getStyleForCurrent('all')}>
             <h1>SEATING PLAN</h1>
             <h2>ประเภทของที่นั่ง</h2>
             <p>
@@ -79,7 +82,7 @@ const SeatingPlanSection = React.createClass({
             </div>
           </div>
           {/* -----------------------------------------------------------------*/}
-          <div className={styles.content} style={{opacity: this.state.current === 'star' ? 1 : 0}}>
+          <div className={styles.content} style={this.getStyleForCurrent('star')}>
             <h1>SEATING PLAN</h1>
             <h3><img src={require('../assets/images/star.png')} /> STAR ZONE</h3>
             <p>
@@ -91,7 +94,7 @@ const SeatingPlanSection = React.createClass({
             <button type='button'>BUY TICKET</button>
           </div>
           {/* -----------------------------------------------------------------*/}
-          <div className={styles.content} style={{opacity: this.state.current === 'cloud' ? 1 : 0}}>
+          <div className={styles.content} style={this.getStyleForCurrent('cloud')}>
             <h1>SEATING PLAN</h1>
             <h3><img src={require('../assets/images/sky-seat.png')} /> CLOUD ZONE</h3>
             <p>
@@ -102,7 +105,7 @@ const SeatingPlanSection = React.createClass({
             <button type='button'>BUY TICKET</button>
           </div>
           {/* -----------------------------------------------------------------*/}
-          <div className={styles.content} style={{opacity: this.state.current === 'ocean' ? 1 : 0}}>
+          <div className={styles.content} style={this.getStyleForCurrent('ocean')}>
             <h1>SEATING PLAN</h1>
             <h3><img src={require('../assets/images/ocean-seat.png')} /> OCEAN ZONE</h3>
             <p>
@@ -113,7 +116,7 @@ const SeatingPlanSection = React.createClass({
             <button type='button'>BUY TICKET</button>
           </div>
           {/* -----------------------------------------------------------------*/}
-          <div className={styles.content} style={{opacity: this.state.current === 'sky' ? 1 : 0}}>
+          <div className={styles.content} style={this.getStyleForCurrent('sky')}>
             <h1>SEATING PLAN</h1>
             <h3><img src={require('../assets/images/purple-seat.png')} /> SKY ZONE</h3>
             <p>
