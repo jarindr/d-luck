@@ -8,6 +8,8 @@ const LocationSection = React.createClass({
       <div className={styles.container}>
         <h1>LOCATION & MAP</h1>
         <img src={require('../assets/images/dluck-map.png')} className={styles.map} />
+        <img src={require('../assets/images/beacon.png')} className={styles.beacon} />
+        <img src={require('../assets/images/google-map-dluck.png')} className={styles.googlemapdluck} />
         <div className={styles.mapLocationContainer}>
           <div className={styles.col} style={{width: '45%'}}>
             <h2>D'LUCK Cinematic Theatre</h2>
@@ -23,44 +25,97 @@ const LocationSection = React.createClass({
           </div>
         </div>
         <div className={styles.transportInformationContainer}>
-          <h2>TRANSPORT<br />INFORMATION</h2>
-          <div className={styles.col} style={{width: '60%'}}>
-            <h3>PERSONAL TRANSIT (รถยนตร์ส่วนตัว)</h3>
+          <h2>การเดินทาง<br />(TRANSPORTATION)</h2>
+          <div className={styles.col}>
+            <h3>การเดินทางโดยรถยนต์ส่วนบุคคล<br />(PERSONAL TRANSPORTATION)</h3>
             <div>
               <img src={require('../assets/images/person-icon.png')} />
-              การเดินทางโดยรถยนตร์ส่วนตัวเริ่มจาก ถ.สุขุมวิท พัทยา
+              <div style={{display: 'inline-block'}}>
+                <h4>ถนนสุขุมวิท (ทางหลวงหมายเลข 3)</h4>
+                <ul>
+                  <li>
+                    มาจากกรุงเทพฯ หรือ ชลบุรี<br />
+                    เมื่อเข้าเขตเมืองพัทยา ให้ขับตรงไปผ่านแยกพัทยาเหนือ,<br />
+                    แยกพัทยากลางและแยกพัทยาใต้ จนกระทั่งถึงแยกเทพประสิทธิ์<br />
+                    (แยกที่มี Outlet Mall Pattaya อยู่ทางด้านขวามือ)<br />
+                    จากนั้นให้เลี้ยวขวาเข้าสู่ถนนเทพประสิทธิ์ ขับตรงมาเรื่อยๆ<br />
+                    ราว 2 กม. จะเห็น Singha D’LUCK Cinematic Theatre<br />อยู่ทางด้านขวามือ
+                  </li>
+                  <li>
+                    มาจากระยอง หรือ สัตหีบ<br />
+                    ขับตามถนนสุขุมวิทมาเรื่อยๆจนกระทั่งถึงแยกเทพประสิทธิ์<br />
+                    (แยกที่มี Outlet Mall Pattaya อยู่ทางด้านซ้ายมือ / ก่อนแยก<br />
+                    พัทยาใต้) จากนั้นให้เลี้ยวซ้ายเข้าสู่ถนนเทพประสิทธิ์ ขับตรงมา<br />เรื่อยๆราว 2 กม. จะเห็น Singha D’LUCK Cinematic<br />
+                    Theatre อยู่ทางด้านขวามือ
+                  </li>
+                  <h4>มอเตอร์เวย์​ (ทางหลวงพิเศษหมายเลข 7)</h4>
+                  <li>จากกรุงเทพฯ<br />
+                    ขับตรงมาเรื่อยจนถึงทางออก บริเวณพัทยาเหนือ<br />
+                    จากนั้นเลี้ยวซ้ายเข้าสู่ถนนสุขุมวิท แล้วขับตรงไปเรื่อยๆ<br />
+                    ผ่านแยกพัทยาเหนือ, แยกพัทยากลาง และแยกพัทยาใต้<br />จนกระทั่งถึงแยกเทพประสิทธิ์ (แยกที่มี Outlet Mall Pattaya<br />
+                    อยู่ทางด้านขวามือ) จากนั้นให้เลี้ยวขวาเข้าสู่ถนนเทพประสิทธิ์<br />
+                    ขับตรงมาเรื่อยๆ ราว 2 กม. จะเห็น Singha D’LUCKิ์<br />
+                    Cinematic Theatre อยู่ทางด้านขวามือ
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div className={styles.col} style={{width: '40%'}}>
-            <h3>PUBLIC TRANSIT (ขนส่งสาธารณะ)</h3>
+          <div className={styles.col} style={{width: 'auto', float: 'right'}}>
+            <h3>การเดินทางโดยขนส่งสาธารณะ<br />(PUBLIC TRANSPORTATION)</h3>
             <div>
               <img src={require('../assets/images/public-icon.png')} />
               <div style={{display: 'inline-block'}}>
-                <h4>1. From BKK (กทม.-พัทยา)</h4>
-                รถตู้
+                <h4>การเดินทางภายในเมืองพัทยา (Public Transportation)</h4>
                 <ul>
-                  <li>อนุสาวรีย์ชัยสมรภูมิ-พัทยา (เซ็นจูรี่)</li>
-                  <li>บางกระปิ-พัทยา</li>
-                  <li>รามคำแหง-พัทยา</li>
-                </ul>
-                รถบัส
-                <ul>
-                  <li>สถานีเอกมัย</li>
-                </ul>
-                <h4>2. From พัทยา</h4>
-                <ul>
-                  <li>สถานีขนส่ง</li>
-                  <li>พัทยาเหนือ / กลาง / ใต้</li>
+                  <li>
+                    ภายในบริเวณเมืองพัทยา<br />
+                    ท่านสามารถนั่งรถสองแถว, แท็กซี่, หรือบริการขนส่งสาธารณะ<br />
+                    ต่างๆ แล้วแจ้งว่ามายัง Singha D’LUCK Cinematic Theatre<br />
+                    ถ.เทพประสิทธิ์ (อยู่ตรงข้ามซ.เทพประสิทธิ์ 11 และ<br />
+                    ซ.เทพประสิทธิ์ 13)
+                  </li>
                 </ul>
               </div>
             </div>
             <div>
               <img src={require('../assets/images/plane-icon.png')} />
               <div style={{display: 'inline-block'}}>
-                <h4>3. From สนามบิน</h4>
+                <h4>การเดินทางจากสนามบิน (From Airport)</h4>
+                <h4>ท่าอากาศยานสุวรรณภูมิ (Suvarnabhumi Airport)</h4>
                 <ul>
-                  <li>สนามบินสุวรรณภูมิ</li>
-                  <li>สนามบินดอนเมือง</li>
+                  <li>
+                    รถโดยสารสาย 389 : ท่าอากาศยานสุวรรณภูมิ – พัทยา<br />
+                    สามารถขึ้นรถได้ที่อาคารผู้โดยสารชั้น 1 ประตู 8 (บริการ<br />
+                    07.00-21.00 น.) ลงที่ Singha D’LUCK Cinematic<br />
+                    Theatre ถ.เทพประสิทธิ์
+                  </li>
+                </ul>
+                <h4>ท่าอากาศยานดอนเมือง (Don Mueang Airport)</h4>
+                <ul>
+                  <li>
+                    Shuttle Bus ดอนเมือง – สุวรรณภูมิ<br />
+                    นั่งรถ Shuttle Bus (บริการฟรีสำหรับผู้มีตั๋วโดยสารเครื่องบิน)<br />
+                    ไปลงที่ท่าอากาศยานสุวรรณภูมิ เสร็จแล้วต่อรถโดยสาร<br />
+                    สาย 389 ลงที่ Singha D’LUCK Cinematic Theatre<br />
+                    ถ.เทพประสิทธิ์
+                  </li>
+                  <li>
+                    Airport Bus สาย A1 : ดอนเมือง – สถานีขนส่งสายเหนือ (หมอชิต)<br />
+                    นั่งรถสาย A1 มาลงที่สถานีขนส่งสายเหนือ (หมอชิต) เสร็จแล้ว<br />
+                    ต่อรถโดยสารปรับอากาศสายกรุงเทพฯ-พัทยา มาลงที่สถานี<br />
+                    รถโดยสารปรับอากาศ พัทยา – กรุงเทพฯ (บขส.)<br />
+                    จากนั้นต่อรถสาธารณะมาที่ ถ.เทพประสิทธิ์เพื่อลงที่<br />
+                    Singha D’LUCK Cinematic<br />Theatre
+                  </li>
+                  <li>
+                    Airport Bus สาย A2 : ดอนเมือง – อนุสาวรีย์ชัยสมรภูมิ<br />
+                    นั่งรถสาย A2 มาลงที่อนุสาวรีย์ชัยสมรภูมิ เสร็จแล้วไปที่<br />
+                    ท่ารถโรงภาพยนตร์ Century ต่อรถตู้สาย กรุงเทพฯ-พัทยา<br />
+                    มาลงที่พัทยา (ใกล้ที่สุดบริเวณ ถ.พัทยาใต้)<br />
+                    จากนั้นต่อรถสาธารณะมาที่ ถ.เทพประสิทธิ์เพื่อลงที่<br />
+                    Singha 	D’LUCK Cinematic Theatre
+                  </li>
                 </ul>
               </div>
             </div>

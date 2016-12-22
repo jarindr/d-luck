@@ -1,4 +1,4 @@
-import '../assets/js/imageMap'
+require('../assets/js/imageMap')
 
 import React from 'react'
 import styles from './SeatingPlanSection.styl'
@@ -27,30 +27,30 @@ const SeatingPlanSection = React.createClass({
         <div className={styles.mapContainer}>
 
           <img src={require('../assets/images/sky-map.png')} style={{opacity: this.state.current === 'sky' ? 1 : 0}} />
-          <img src={require('../assets/images/star-map.png')} style={{opacity: this.state.current === 'star' ? 1 : 0}} />
+          <img src={require('../assets/images/star-map.jpg')} style={{opacity: this.state.current === 'star' ? 1 : 0}} />
           <img src={require('../assets/images/ocean-map.png')} style={{opacity: this.state.current === 'ocean' ? 1 : 0}} />
           <img src={require('../assets/images/cloud-map.png')} style={{opacity: this.state.current === 'cloud' ? 1 : 0}} />
           <map name="Map" id="Map">
             <img src={require('../assets/images/map.png')} useMap="#Map" style={{opacity: this.state.current === 'all' ? 1 : 0, zIndex: 10}} />
             <area
               shape="poly"
-              coords="23,80,171,15,207,27,360,4,651,13,710,2,832,22,951,42,1003,77,1005,198,1005,475,991,498,837,395,892,241,799,193,651,146,648,94,621,83,561,76,489,82,432,81,388,90,364,163,237,191,132,243,216,420,49,529,11,482"
-              onMouseOver={this.onChangeState('sky')}
-              />
-            <area
-              shape="poly"
-              coords="392,92,528,81,642,95,636,133,657,164,724,180,884,241,840,338,646,284,512,262,417,277,287,302,199,340,147,243,251,202,369,172"
-              onMouseOver={this.onChangeState('cloud')}
+              coords="77,143,129,248,6,313,6,29,217,4,381,8,476,13,592,37,588,297,486,236,524,141,388,94,229,89"
+              onClick={this.onChangeState('sky')}
             />
             <area
               shape="poly"
-              coords="202,347,285,309,383,286,516,271,611,282,742,313,833,342,807,403,642,355,507,339,320,371,229,404"
-              onMouseOver={this.onChangeState('star')}
+              coords="86,142,218,100,375,100,516,142,489,199,378,159,243,159,113,195"
+              onClick={this.onChangeState('cloud')}
             />
             <area
               shape="poly"
-              coords="66,601,260,465,498,410,630,421,757,460,884,531,967,615,826,730,701,654,540,614,369,640,207,737"
-              onMouseOver={this.onChangeState('ocean')}
+              coords="118,202,225,169,361,163,491,204,476,239,317,196,179,222,135,239"
+              onClick={this.onChangeState('star')}
+            />
+            <area
+              shape="poly"
+              coords="37,354,152,263,230,237,319,231,378,248,575,350,487,436,314,363,126,442"
+              onClick={this.onChangeState('ocean')}
             />
           </map>
         </div>
@@ -91,7 +91,9 @@ const SeatingPlanSection = React.createClass({
                (High Definition Projection Mapping) ได้อย่างชัดเจนที่สุด และยังเป็นจุดที่รับฟังระบบเสียงที่ได้รับการออกแบบอย่างมีประสิทธิภาพ ได้สมบูรณ์แบบที่สุดด้วย
             </p>
             <p>ราคา 4,000 บาท</p>
-            <button type='button'>BUY TICKET</button>
+            <a target='_blank' href='https://www.pandapass.asia/booking/external/5?ticketClassTypeName=Star Zone'>
+              <button type='button'>BUY TICKET</button>
+            </a>
           </div>
           {/* -----------------------------------------------------------------*/}
           <div className={styles.content} style={this.getStyleForCurrent('cloud')}>
@@ -102,7 +104,9 @@ const SeatingPlanSection = React.createClass({
               และเต็มอิ่มกับรายละเอียดต่างๆ บนเวที ทั้งระบบแสง เสียง และเทคนิคพิเศษมากมายอย่างเต็มอรรถรส
             </p>
             <p>ราคา 3,000 บาท</p>
-            <button type='button'>BUY TICKET</button>
+            <a target='_blank' href='https://www.pandapass.asia/booking/external/5?ticketClassTypeName=Cloud Zone'>
+              <button type='button'>BUY TICKET</button>
+            </a>
           </div>
           {/* -----------------------------------------------------------------*/}
           <div className={styles.content} style={this.getStyleForCurrent('ocean')}>
@@ -113,7 +117,9 @@ const SeatingPlanSection = React.createClass({
             ทำให้คุณได้สัมผัสประสบการณ์ การแสดงอย่างใกล้ชิดราวกับได้หลุดเข้าไปในโลกของการแสดงจริงๆ
             </p>
             <p>ราคา 3,000 บาท</p>
-            <button type='button'>BUY TICKET</button>
+            <a target='_blank' href='https://www.pandapass.asia/booking/external/5?ticketClassTypeName=Ocean Zone'>
+              <button type='button'>BUY TICKET</button>
+            </a>
           </div>
           {/* -----------------------------------------------------------------*/}
           <div className={styles.content} style={this.getStyleForCurrent('sky')}>
@@ -124,7 +130,9 @@ const SeatingPlanSection = React.createClass({
               สามารถมองเห็นรายละเอียดการแสดงที่เกิดขึ้นได้ทั่วทั้งหมด พร้อมกันนี้คุณจะได้ตื่นตาตื่นใจกับฉากหลังสุดอลังการไม่แพ้โซนอื่นๆ เช่นกัน
             </p>
             <p>ราคา 2,500 บาท</p>
-            <button type='button'>BUY TICKET</button>
+            <a target='_blank' href='https://www.pandapass.asia/booking/external/5?ticketClassTypeName=Sky Zone'>
+              <button type='button'>BUY TICKET</button>
+            </a>
           </div>
         </div>
       </div>
