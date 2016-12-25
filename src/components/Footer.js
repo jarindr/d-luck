@@ -102,33 +102,33 @@ const Footer = React.createClass({
                 <ul>
                   <li>INFO & DOWNLOAD</li>
                   <li>NEWS</li>
-                  <li><Link to='/info/download/'>DOWNLOAD PHOTO, FACT SHEET, CLIPS</Link></li>
-                  <li><Link to='/info/term/'>TERM & CONDITION</Link></li>
-                  <li><Link to='/info/disclaimer/'>DISCLIMER</Link></li>
-                  <li><Link to='/info/privacy/'>PRIVACY</Link></li>
-                  <li><Link to='/info/faq/'>FAQ</Link></li>
+                  <li><a target='_blank' href='https://kaanshow-ec4c0.firebaseapp.com/info/download/'>DOWNLOAD<br />(PHOTO, FACT SHEET, CLIPS)</a></li>
+                  <li><a target='_blank' href='https://kaanshow-ec4c0.firebaseapp.com/info/term/'>TERM & CONDITION</a></li>
+                  <li><a target='_blank' href='https://kaanshow-ec4c0.firebaseapp.com/info/disclaimer/'>DISCLAIMER</a></li>
+                  <li><a target='_blank' href='https://kaanshow-ec4c0.firebaseapp.com/info/privacy/'>PRIVACY</a></li>
+                  <li><a target='_blank' href='https://kaanshow-ec4c0.firebaseapp.com/info/faq/'>FAQ</a></li>
                 </ul>
               </div>
               <div className={styles.siteMapBlock}>
                 <ul>
                   <li>BOOKING TICKET</li>
-                  <li><Link to='/ticket/'>PACKAGE & PROMOTION</Link></li>
+                  <li><a target='_blank' href='https://kaanshow-ec4c0.firebaseapp.com/ticket/type/'>PACKAGE & PROMOTION</a></li>
                 </ul>
               </div>
             </div>
             <div className={styles.contact}>
               <h2>CONTACT</h2>
-              <div className={styles.siteMapBlock}>
+              <div className={styles.siteMapBlock}  style={{width: '40%'}}>
                 <ul>
                   <li>CONTACT</li>
                   <li>
                     ADDRESS
                     <br />
-                    <span style={{fontFamily: 'kanit', fontSize: '14px'}}>บริษัท ปัญลักษณ์ พาสุข จำกัด เลขที่ 202 อาคาร เลอ คองคอร์ด<br />ห้อง 1601 ชั้น 16 ถ.รัชดาภิเษก แขวงห้วยขวาง กรุงเทพฯ 10310</span>
+                    <span style={{fontFamily: 'kanit', fontSize: '14px'}}>บริษัท ปัญลักษณ์ พาสุข จำกัด <br />เลขที่ 202 อาคาร เลอ คองคอร์ด <br />ห้อง 1601 ชั้น 16 ถ.รัชดาภิเษก <br />แขวงห้วยขวาง กรุงเทพฯ 10310</span>
                   </li>
                 </ul>
               </div>
-              <div className={styles.siteMapBlock}>
+              <div className={styles.siteMapBlock} style={{width: '30%'}}>
                 <ul>
                   <li>PHONE</li>
                   <li>
@@ -143,7 +143,7 @@ const Footer = React.createClass({
                   </li>
                 </ul>
               </div>
-              <div className={styles.siteMapBlock}>
+              <div className={styles.siteMapBlock} style={{width: '30%'}}>
                 <ul>
                   <li>EMAIL</li>
                   <li>

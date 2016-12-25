@@ -1,10 +1,9 @@
-require('../assets/js/imageMap')
-
 import React from 'react'
 import styles from './SeatingPlanSection.styl'
 
 const SeatingPlanSection = React.createClass({
   componentDidMount () {
+    require('../assets/js/imageMap')
     $('img[usemap]').rwdImageMaps()
   },
   getInitialState () {

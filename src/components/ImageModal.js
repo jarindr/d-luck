@@ -18,13 +18,15 @@ const customStyles = {
     border: 'none',
     margin: 0,
     background: 'none',
-    width: '90vw'
+    width: '65vw',
+    overflow: 'visible'
   }
 }
 
 const ImageModalBox = React.createClass({
   propTypes: {
     image: React.PropTypes.string,
+    caption: React.PropTypes.string,
     isModalOpen: React.PropTypes.bool.isRequired,
     closeModal: React.PropTypes.func.isRequired,
     current: React.PropTypes.number.isRequired,
@@ -43,6 +45,7 @@ const ImageModalBox = React.createClass({
         style={customStyles}
       >
         <div className={styles.container}>
+          <div className={styles.caption}>THIS IS A CAPTION</div>
           <img src={require('../assets/images/closeButtonBlack.png')} className={styles.closeButton} onClick={this.closeModal} />
           <img src={require('../assets/images/next.png')} className={styles.arrowLeft} onClick={this.props.onClickPrev} />
           <img src={this.props.image} className={styles.imageShow} />
