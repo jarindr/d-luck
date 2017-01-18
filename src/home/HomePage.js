@@ -2,14 +2,12 @@ import Footer from '../components/Footer'
 import IntroSection from './IntroSection'
 import KaanGallerySection from './KaanGallerySection'
 import LocationSection from './LocationSection'
-import MakingTheShowSection from './MakingTheShowSection'
 import React from 'react'
 import SeatingPlanSection from './SeatingPlanSection'
-import WorldOfKaanSection from './WorldOfKaanSection'
 import { checkRectIntersection } from '../utils/intersection'
 import scrollTo from 'scroll-to-element'
 import styles from './HomePage.styl'
-const SIDENAV = ['ABOUT<br>DLUCK', 'GALLERY', 'SEATING PLAN', 'THEATRE 360', 'FACILITIES', 'LOCATION MAP']
+const SIDENAV = ['ABOUT<br>DLUCK', 'GALLERY', 'SEATING PLAN', 'FACILITIES', 'LOCATION MAP']
 const MainPage = React.createClass({
   componentDidMount () {
     this.checkNavScroll()
@@ -96,13 +94,10 @@ const MainPage = React.createClass({
           <div ref='SEATING PLAN' id='SEATING-PLAN'>
             <SeatingPlanSection />
           </div>
-          <div ref='THEATRE 360' id='THEATRE-360'>
-            <WorldOfKaanSection />
-          </div>
           <div ref='FACILITIES' id='FACILITIES'>
             <KaanGallerySection />
           </div>
-          <div ref='LOCATION MAP' id='LOCATION-MAP'>
+          <div ref='LOCATION MAP' id='LOCATION-MAP' style={{backgroundColor: '#fcfcfc', height: '1500px'}}>
             <LocationSection />
           </div>
         </div>

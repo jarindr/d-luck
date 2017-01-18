@@ -1,5 +1,4 @@
-import React, { PropTypes } from 'react'
-
+import React from 'react'
 import styles from './LocationSection.styl'
 
 const LocationSection = React.createClass({
@@ -8,7 +7,7 @@ const LocationSection = React.createClass({
       <div className={styles.container}>
         <h1>LOCATION & MAP</h1>
         <img src={require('../assets/images/dluck-map.png')} className={styles.map} />
-        <img src={require('../assets/images/beacon.png')} className={styles.beacon} />
+        <img src={require('../assets/images/beacon.png')} className={styles.beacon} onClick={() => window.open('https://goo.gl/maps/7y8bpXgA7M52', '_blank')} />
         <img src={require('../assets/images/google-map-dluck.png')} className={styles.googlemapdluck} />
         <div className={styles.mapLocationContainer}>
           <div className={styles.col} style={{width: '45%'}}>
@@ -48,8 +47,8 @@ const LocationSection = React.createClass({
                     พัทยาใต้) จากนั้นให้เลี้ยวซ้ายเข้าสู่ถนนเทพประสิทธิ์ ขับตรงมา<br />เรื่อยๆราว 2 กม. จะเห็น SINGHA D’LUCK Cinematic<br />
                     Theatre อยู่ทางด้านขวามือ
                   </li>
-                  <h4>มอเตอร์เวย์​ (ทางหลวงพิเศษหมายเลข 7)</h4>
-                  <li style={{marginTop: '10px'}}>จากกรุงเทพฯ<br />
+                  <h4 style={{margin: '10px 0'}}>มอเตอร์เวย์​ (ทางหลวงพิเศษหมายเลข 7)</h4>
+                  <li>จากกรุงเทพฯ<br />
                     ขับตรงมาเรื่อยจนถึงทางออกบริเวณพัทยาเหนือ<br />
                     จากนั้นเลี้ยวซ้ายเข้าสู่ถนนสุขุมวิท แล้วขับตรงไปเรื่อยๆ<br />
                     ผ่านแยกพัทยาเหนือ, แยกพัทยากลาง และแยกพัทยาใต้<br />จนกระทั่งถึงแยกเทพประสิทธิ์ (แยกที่มี Outlet Mall Pattaya<br />

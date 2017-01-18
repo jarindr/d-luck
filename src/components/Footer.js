@@ -122,7 +122,7 @@ const Footer = React.createClass({
                 <ul>
                   <li>CONTACT</li>
                   <li>
-                    <span style={{fontFamily: 'kanit', fontSize: '14px'}}>บริษัท ปัญลักษณ์ พาสุข จำกัด <br />เลขที่ 202 อาคาร เลอ คองคอร์ด <br />ห้อง 1601 ชั้น 16 ถ.รัชดาภิเษก <br />แขวงห้วยขวาง กรุงเทพฯ 10310</span>
+                    <span style={{fontFamily: 'kanit', fontSize: '14px'}}>บริษัท ปัญลักษณ์พาสุข จำกัด <br />เลขที่ 202 อาคาร เลอ คองคอร์ด <br />ห้อง 1601 ชั้น 16 ถ.รัชดาภิเษก <br />แขวงห้วยขวาง กรุงเทพฯ 10310</span>
                   </li>
                 </ul>
               </div>

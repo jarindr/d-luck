@@ -8,11 +8,13 @@ const SeatingPlanSection = React.createClass({
   },
   getInitialState () {
     return {
-      current: 'all'
+      current: 'all',
+      isClicked: false
     }
   },
-  onChangeState (state) {
+  onChangeState (state, click) {
     return (e) => {
+      if (click) this.setState({isClicked: true})
       e.preventDefault()
       this.setState({current: state})
     }
@@ -34,22 +36,26 @@ const SeatingPlanSection = React.createClass({
             <area
               shape="poly"
               coords="77,143,129,248,6,313,6,29,217,4,381,8,476,13,592,37,588,297,486,236,524,141,388,94,229,89"
-              onClick={this.onChangeState('sky')}
+              onClick={this.onChangeState('sky', 'click')}
+              onHover={this.onChangeState('sky')}
             />
             <area
               shape="poly"
               coords="86,142,218,100,375,100,516,142,489,199,378,159,243,159,113,195"
-              onClick={this.onChangeState('cloud')}
+              onClick={this.onChangeState('cloud', 'click')}
+              onHover={this.onChangeState('cloud')}
             />
             <area
               shape="poly"
               coords="118,202,225,169,361,163,491,204,476,239,317,196,179,222,135,239"
-              onClick={this.onChangeState('star')}
+              onClick={this.onChangeState('star', 'click')}
+              onHover={this.onChangeState('star')}
             />
             <area
               shape="poly"
               coords="37,354,152,263,230,237,319,231,378,248,575,350,487,436,314,363,126,442"
-              onClick={this.onChangeState('ocean')}
+              onClick={this.onChangeState('ocean', 'click')}
+              onHover={this.onChangeState('ocean')}
             />
           </map>
         </div>
