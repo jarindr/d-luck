@@ -7,7 +7,7 @@ import SeatingPlanSection from './SeatingPlanSection'
 import { checkRectIntersection } from '../utils/intersection'
 import scrollTo from 'scroll-to-element'
 import styles from './HomePage.styl'
-const SIDENAV = ['ABOUT<br>DLUCK', 'GALLERY', 'SEATING PLAN', 'FACILITIES', 'LOCATION MAP']
+const SIDENAV = ['ABOUT<br>D\'LUCK', 'GALLERY', 'SEATING PLAN', 'FACILITIES', 'LOCATION MAP']
 const MainPage = React.createClass({
   componentDidMount () {
     this.checkNavScroll()
@@ -24,22 +24,14 @@ const MainPage = React.createClass({
   checkNavScroll () {
     const scrollPosition = $(window).scrollTop()
     $(`.${styles.circle}`).each((index, el) => {
-      const id = $(el).attr('data-attribute')
+      const id = $(el).attr('data-attribute').replace(/'/g, '')
       const $section = $(`#${id}`)
       const top = $section.offset().top - 81 - 50
       const bottom = top + $section.outerHeight(true)
       if (bottom > scrollPosition && top < scrollPosition) {
         $(el).addClass(styles.white)
-        if (!this.state.navigateBySide) {
-          $(el).siblings(`.${styles.dotNavText}`).addClass(styles.show)
-        } else if (this.state.navigateBySide && this.state.currentSection === id) {
-          $(el).siblings(`.${styles.dotNavText}`).addClass(styles.show)
-        } else {
-          $(el).siblings(`.${styles.dotNavText}`).removeClass(styles.show)
-        }
       } else {
         $(el).removeClass(styles.white)
-        $(el).siblings(`.${styles.dotNavText}`).removeClass(styles.show)
       }
     })
     const footerRect = $('#footer-hack')[0].getBoundingClientRect()
@@ -59,7 +51,7 @@ const MainPage = React.createClass({
     )
   },
   onClickCircle (text, e) {
-    const id = text.replace(/ /g, '-').replace(/<br>/g, '-')
+    const id = text.replace(/ /g, '-').replace(/<br>/g, '-').replace(/'/g, '')
     this.setState({currentSection: id, navigateBySide: true}, () => {
       scrollTo(`#${id}`, {
         offset: -80,
@@ -85,19 +77,19 @@ const MainPage = React.createClass({
       <div>
         <div className={styles.container}>
           {this.renderSideNav()}
-          <div ref='ABOUT DLUCK' id='ABOUT-DLUCK'>
+          <div id='ABOUT-DLUCK'>
             <IntroSection />
           </div>
-          <div ref='GALLERY' id='GALLERY'>
+          <div id='GALLERY'>
             <KaanGallerySection />
           </div>
-          <div ref='SEATING PLAN' id='SEATING-PLAN'>
+          <div id='SEATING-PLAN'>
             <SeatingPlanSection />
           </div>
-          <div ref='FACILITIES' id='FACILITIES'>
+          <div id='FACILITIES'>
             <KaanGallerySection />
           </div>
-          <div ref='LOCATION MAP' id='LOCATION-MAP' style={{backgroundColor: '#fcfcfc', height: '1500px'}}>
+          <div id='LOCATION-MAP' style={{backgroundColor: '#fcfcfc', height: '1500px'}}>
             <LocationSection />
           </div>
         </div>

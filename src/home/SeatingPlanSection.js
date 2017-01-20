@@ -13,20 +13,27 @@ const SeatingPlanSection = React.createClass({
     }
   },
   onChangeState (state, click) {
-    return (e) => {
-      if (click) this.setState({isClicked: true})
-      e.preventDefault()
-      this.setState({current: state})
+    if (this.state.isClicked && click !== 'click') {
+      return (e) => {}
+    } else {
+      return (e) => {
+        if (click) this.setState({isClicked: true})
+        e.preventDefault()
+        this.setState({current: state})
+      }
     }
   },
   getStyleForCurrent (state) {
-    return this.state.current === state ? {opacity: 1, zIndex: 2} : {opacity: 0, zIndex: 1}
+    if (state === 'all' && !this.state.isClicked) {
+      return {opacity: 1, zIndex: 2}
+    } else {
+      return this.state.current === state && this.state.isClicked ? {opacity: 1, zIndex: 2} : {opacity: 0, zIndex: 1}
+    }
   },
   render () {
     return (
       <div className={styles.container}>
         <div className={styles.mapContainer}>
-
           <img src={require('../assets/images/sky-map.png')} style={{opacity: this.state.current === 'sky' ? 1 : 0}} />
           <img src={require('../assets/images/star-map.jpg')} style={{opacity: this.state.current === 'star' ? 1 : 0}} />
           <img src={require('../assets/images/ocean-map.png')} style={{opacity: this.state.current === 'ocean' ? 1 : 0}} />
@@ -37,25 +44,25 @@ const SeatingPlanSection = React.createClass({
               shape="poly"
               coords="77,143,129,248,6,313,6,29,217,4,381,8,476,13,592,37,588,297,486,236,524,141,388,94,229,89"
               onClick={this.onChangeState('sky', 'click')}
-              onHover={this.onChangeState('sky')}
+              onMouseOver={this.onChangeState('sky')}
             />
             <area
               shape="poly"
               coords="86,142,218,100,375,100,516,142,489,199,378,159,243,159,113,195"
               onClick={this.onChangeState('cloud', 'click')}
-              onHover={this.onChangeState('cloud')}
+              onMouseOver={this.onChangeState('cloud')}
             />
             <area
               shape="poly"
               coords="118,202,225,169,361,163,491,204,476,239,317,196,179,222,135,239"
               onClick={this.onChangeState('star', 'click')}
-              onHover={this.onChangeState('star')}
+              onMouseOver={this.onChangeState('star')}
             />
             <area
               shape="poly"
               coords="37,354,152,263,230,237,319,231,378,248,575,350,487,436,314,363,126,442"
               onClick={this.onChangeState('ocean', 'click')}
-              onHover={this.onChangeState('ocean')}
+              onMouseOver={this.onChangeState('ocean')}
             />
           </map>
         </div>

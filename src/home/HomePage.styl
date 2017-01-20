@@ -15,6 +15,9 @@
   height: 12px
   border-radius: 50%
   border 1px solid #c6c6c6
+  &:hover + .dotNavText
+    opacity 1
+
 .dotNavText
   opacity: 0;
   font-size: 8px;
@@ -31,6 +34,9 @@
   background-color: rgb(144, 144, 144)
 .dotNavContainer
   display: block;
+.dotNavContainer:hover .dotNavText
+  opacity: 1
+  cursor pointer
 
 @media screen and (max-width 500px)
   .dotNavContainer
