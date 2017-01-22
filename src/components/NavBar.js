@@ -17,12 +17,12 @@ const NavBar = React.createClass({
         <div className={styles.navigationContainer}>
           <span className={styles.navItem}>KAAN SHOW</span>
           <span className={styles.navItem} style={{color: 'black'}}>D'LUCK</span>
-          <span className={styles.navItem}><a href='https://punjaluck-a28c1.firebaseapp.com/'>PANJALUCK</a></span>
+          <span className={styles.navItem}><a target='_blank' href='https://punjaluck-a28c1.firebaseapp.com/'>PANJALUCK</a></span>
           <span className={styles.navItem}>LANGUAGE</span>
           <span className={styles.navItem}>
             <i className='flaticon-search'></i>
           </span>
-          <a href='https://www.pandapass.asia/booking/external/5' target='_blank'><span className={`${styles.navItem} ${styles.ticket}`}>TICKET</span></a>
+          <a href='https://kaanshow-ec4c0.firebaseapp.com/ticket/type/' target='_blank'><span className={`${styles.navItem} ${styles.ticket}`}>TICKET</span></a>
         </div>
       </div>
     )

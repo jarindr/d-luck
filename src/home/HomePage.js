@@ -9,12 +9,6 @@ import scrollTo from 'scroll-to-element'
 import styles from './HomePage.styl'
 const SIDENAV = ['ABOUT<br>D\'LUCK', 'GALLERY', 'SEATING PLAN', 'FACILITIES', 'LOCATION MAP']
 const MainPage = React.createClass({
-  componentDidMount () {
-    this.checkNavScroll()
-    window.addEventListener('scroll', () => {
-      this.checkNavScroll()
-    })
-  },
   getInitialState () {
     return {
       currentSection: 'ABOUT-DLUCK',
@@ -77,19 +71,19 @@ const MainPage = React.createClass({
       <div>
         <div className={styles.container}>
           {this.renderSideNav()}
-          <div id='ABOUT-DLUCK'>
+          <div id='ABOUT-DLUCK' className={styles.sectionContainer}>
             <IntroSection />
           </div>
-          <div id='GALLERY'>
+          <div id='GALLERY' className={styles.sectionContainer}>
             <KaanGallerySection />
           </div>
-          <div id='SEATING-PLAN'>
+          <div id='SEATING-PLAN' className={styles.sectionContainer}>
             <SeatingPlanSection />
           </div>
-          <div id='FACILITIES'>
+          <div id='FACILITIES' className={styles.sectionContainer}>
             <KaanGallerySection />
           </div>
-          <div id='LOCATION-MAP' style={{backgroundColor: '#fcfcfc', height: '1500px'}}>
+          <div id='LOCATION-MAP' style={{backgroundColor: '#fcfcfc', height: '1500px'}} className={styles.sectionContainer}>
             <LocationSection />
           </div>
         </div>
