@@ -105,7 +105,7 @@ const LocationSection = React.createClass({
                     ต่อรถโดยสารปรับอากาศสายกรุงเทพฯ-พัทยา มาลงที่สถานี<br />
                     รถโดยสารปรับอากาศ พัทยา – กรุงเทพฯ (บขส.)<br />
                     จากนั้นต่อรถสาธารณะมาที่ ถนนเทพประสิทธิ์เพื่อลงที่<br />
-                    SINGHA D’LUCK Cinematic<br />Theatre
+                    SINGHA D’LUCK Cinematic Theatre
                   </li>
                 </ul>
               </div>
