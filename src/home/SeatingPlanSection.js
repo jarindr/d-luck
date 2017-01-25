@@ -103,7 +103,7 @@ const SeatingPlanSection = React.createClass({
                (High Definition Projection Mapping) ได้อย่างชัดเจนที่สุด และยังเป็นจุดที่รับฟังระบบเสียงที่ได้รับการออกแบบอย่างมีประสิทธิภาพ ได้สมบูรณ์แบบที่สุดด้วย
             </p>
             <p>ราคา 4,000 บาท</p>
-            <a target='_blank' href='https://www.pandapass.asia/booking/external/5?ticketClassTypeName=Star Zone'>
+            <a target='_blank' href='http://uat-www.pandapass.asia/booking/external/5?ticketClassTypeName=Star'>
               <button type='button'>BUY TICKET</button>
             </a>
           </div>
@@ -116,7 +116,7 @@ const SeatingPlanSection = React.createClass({
               และเต็มอิ่มกับรายละเอียดต่างๆ บนเวที ทั้งระบบแสง เสียง และเทคนิคพิเศษมากมายอย่างเต็มอรรถรส
             </p>
             <p>ราคา 3,000 บาท</p>
-            <a target='_blank' href='https://www.pandapass.asia/booking/external/5?ticketClassTypeName=Cloud Zone'>
+            <a target='_blank' href='http://uat-www.pandapass.asia/booking/external/5?ticketClassTypeName=Cloud'>
               <button type='button'>BUY TICKET</button>
             </a>
           </div>
@@ -129,7 +129,7 @@ const SeatingPlanSection = React.createClass({
             ทำให้คุณได้สัมผัสประสบการณ์การแสดงอย่างใกล้ชิดราวกับได้หลุดเข้าไปในโลกของการแสดงจริงๆ
             </p>
             <p>ราคา 3,000 บาท</p>
-            <a target='_blank' href='https://www.pandapass.asia/booking/external/5?ticketClassTypeName=Ocean Zone'>
+            <a target='_blank' href='http://uat-www.pandapass.asia/booking/external/5?ticketClassTypeName=Ocean'>
               <button type='button'>BUY TICKET</button>
             </a>
           </div>
@@ -142,7 +142,7 @@ const SeatingPlanSection = React.createClass({
               สามารถมองเห็นรายละเอียดการแสดงที่เกิดขึ้นได้ทั่วทั้งหมด พร้อมกันนี้คุณจะได้ตื่นตาตื่นใจกับฉากหลังสุดอลังการไม่แพ้โซนอื่นๆ เช่นกัน
             </p>
             <p>ราคา 2,500 บาท</p>
-            <a target='_blank' href='https://www.pandapass.asia/booking/external/5?ticketClassTypeName=Sky Zone'>
+            <a target='_blank' href='http://uat-www.pandapass.asia/booking/external/5?ticketClassTypeName=Sky'>
               <button type='button'>BUY TICKET</button>
             </a>
           </div>

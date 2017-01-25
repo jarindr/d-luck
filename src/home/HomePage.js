@@ -83,7 +83,7 @@ const MainPage = React.createClass({
           <div id='FACILITIES' className={styles.sectionContainer}>
             <KaanGallerySection />
           </div>
-          <div id='LOCATION-MAP' style={{backgroundColor: '#fcfcfc', height: '1500px'}} className={styles.sectionContainer}>
+          <div id='LOCATION-MAP' style={{backgroundColor: '#fcfcfc', height: '1700px'}} className={styles.sectionContainer}>
             <LocationSection />
           </div>
         </div>

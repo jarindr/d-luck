@@ -169,7 +169,7 @@ const Footer = React.createClass({
           </div>
           <div className={styles.footerBar}>
             <span>© 2016 PANJALUCK PASUK CO., LTD. ALL RIGHTS RESERVED.</span>
-            <span onClick={this.onClickToTop} style={{float: 'right', cursor: 'pointer'}}>TO THE TOP <img src={require('../assets/images/to_top.png')} style={{width: '15px'}} /></span>
+            <span onClick={this.onClickToTop} style={{float: 'right', cursor: 'pointer'}}>TO THE TOP <img src={require('../assets/images/to_top.png')} style={{width: '15px', filter: 'brightness(70%)'}} /></span>
           </div>
         </div>
       </div>
