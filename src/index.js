@@ -21,7 +21,7 @@ if (typeof document !== 'undefined') {
 
 function createRouter (routes, key) {
   return (
-    <Router history={browserHistory} key={Date.now()} render={applyRouterMiddleware(useScroll())}>
+    <Router history={browserHistory} key={Date.now()}>
       {routes}
     </Router>
   )
