@@ -7,8 +7,9 @@
   text-align: center;
   margin: 0 auto
   position relative
+  overflow hidden
   h1
-    font-size: 50px
+    font-size: 40px
   img.map
     width: 1100px
     margin: 0 auto
@@ -67,3 +68,21 @@
   li
     margin-left: 20px
     padding: 10px 0
+@media screen and (max-width 1100px)
+  .container
+    padding-left 5%
+    padding-right 5%
+    img.map
+      width 100%
+    img.beacon
+      display none
+  .col
+    display block
+    float none!important
+    width 100%!important
+    br
+     display none
+@media screen and (max-width 768px)
+  .transportInformationContainer
+    h2
+      font-size 30px

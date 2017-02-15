@@ -8,20 +8,24 @@
   padding: 0 50px
   height: 80px
   position: fixed;
-  z-index 999
+  z-index: 30
   top: 0;
 .navItem
   margin: 0 10px;
   font-size: 12px;
-  color: #aaaaaa
+  color: #6e6e6e
   cursor: pointer;
 .navigationContainer
   align-items: center;
   margin-left: auto;
+  transition 0.2s
 .navigationLogo
   display: inline-flex;
   img
     height: 40px
+.search
+  width 15px
+  opacity 0.5
 .ticket
   background-color: #be9b42
   color: white
@@ -29,20 +33,22 @@
 .containerMobile
   display: none;
   height: 60px;
-  background-color: black
+  background-color: white
   width: 100%
-
+.active
+  transform: translate3d(0,0,0)!important
 @media screen and (max-width 500px)
   .container
     padding: 0 20px
   .navigationContainer
+    text-align center
     position: fixed;
     left: 0
     right: 0
     top: 0
     bottom: 0
     padding-top: 50%
-    background-color: black
+    background-color: white
     transform: translate3d(-100%,0,0);
   .navigationLogo
     display: inline-flex
@@ -50,6 +56,7 @@
     font-size: 40px
     padding: 10px 0
     display: block
+    margin 0
     width: 100%
 
 :global
@@ -72,7 +79,7 @@
     position: absolute;
     height: 5px;
     width: 100%;
-    background-color: white;
+    background-color: black;
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
@@ -116,7 +123,7 @@
     width: 0%;
     left: 50%;
   }
-@media screen and (max-width 500px)
-  #hamberger-menu
-    display block
-    position: relative;
+  @media screen and (max-width 500px)
+    #hamberger-menu
+      display block
+      position: relative;

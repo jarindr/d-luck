@@ -15,6 +15,13 @@ const MainPage = React.createClass({
       navigateBySide: false
     }
   },
+  componentDidMount () {
+    this.checkNavScroll()
+    window.addEventListener('scroll', this.checkNavScroll)
+  },
+  componentWillUnmount () {
+    window.removeEventListener('scroll', this.checkNavScroll)
+  },
   checkNavScroll () {
     const scrollPosition = $(window).scrollTop()
     $(`.${styles.circle}`).each((index, el) => {
@@ -48,7 +55,6 @@ const MainPage = React.createClass({
     const id = text.replace(/ /g, '-').replace(/<br>/g, '-').replace(/'/g, '')
     this.setState({currentSection: id, navigateBySide: true}, () => {
       scrollTo(`#${id}`, {
-        offset: -80,
         ease: 'inOutExpo',
         duration: 1500
       })
@@ -83,7 +89,7 @@ const MainPage = React.createClass({
           <div id='FACILITIES' className={styles.sectionContainer}>
             <KaanGallerySection />
           </div>
-          <div id='LOCATION-MAP' style={{backgroundColor: '#fcfcfc', height: '1700px'}} className={styles.sectionContainer}>
+          <div id='LOCATION-MAP' style={{backgroundColor: '#fcfcfc'}} className={styles.sectionContainer}>
             <LocationSection />
           </div>
         </div>
