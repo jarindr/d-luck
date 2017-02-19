@@ -2,25 +2,54 @@ import React from 'react'
 import styles from './LocationSection.styl'
 
 const LocationSection = React.createClass({
+  componentDidMount () {
+    this.setState({
+      beaconPosition: {
+        top: this.map.width * 23 / 100,
+        left: this.map.width * 48 / 100
+      }
+    })
+    window.addEventListener('resize', () => {
+      this.setState({
+        beaconPosition: {
+          top: this.map.width * 23 / 100,
+          left: this.map.width * 48 / 100
+        }
+      })
+    })
+  },
+  getInitialState () {
+    return {
+      beaconPosition: {}
+    }
+  },
   render () {
     return (
       <div className={styles.container}>
         <h1>LOCATION & MAP</h1>
-        <img src={require('../assets/images/dluck-map.png')} className={styles.map} />
-        <img src={require('../assets/images/beacon.png')} className={styles.beacon} onClick={() => window.open('https://goo.gl/maps/7y8bpXgA7M52', '_blank')} />
-        <img src={require('../assets/images/google-map-dluck.png')} className={styles.googlemapdluck} />
+        <div className={styles.mapContainer}>
+          <img ref={e => this.map = e} src={require('../assets/images/dluck-map.png')} className={styles.map} />
+          <div className={styles.beaconContainer} ref={e => this.beacon = e} style={{ top: this.state.beaconPosition.top, left: this.state.beaconPosition.left }}>
+            <img
+              src={require('../assets/images/beacon.png')}
+              onClick={() => window.open('https://goo.gl/maps/7y8bpXgA7M52', '_blank')}
+              className={styles.beacon}
+            />
+            <img src={require('../assets/images/google-map-dluck.png')} className={styles.googlemapdluck} />
+          </div>
+        </div>
         <div className={styles.mapLocationContainer}>
-          <div className={styles.col} style={{width: '45%'}}>
+          <div className={styles.col} style={{ width: '45%' }}>
             <h2>SINGHA D'LUCK Cinematic Theatre</h2>
-            <span style={{fontWeight: 400}}>สิงห์ดีลักษณ์ ซีนีมาติก เธียเตอร์</span>
+            <span style={{ fontWeight: 400 }}>สิงห์ดีลักษณ์ ซีนีมาติก เธียเตอร์</span>
           </div>
-          <div className={styles.col} style={{width: '30%', fontSize: '12px'}}>
+          <div className={styles.col} style={{ width: '30%', fontSize: '12px' }}>
             <img src={require('../assets/images/location-icon.png')} className={styles.icon} />
-            <div style={{display: 'inline-block'}}>168/8 หมู่ 12 ถนนเทพประสิทธิ์ ต.หนองปรือ<br />อ.บางละมุง จ.ชลบุรี 20260</div>
+            <div style={{ display: 'inline-block' }}>168/8 หมู่ 12 ถนนเทพประสิทธิ์ ต.หนองปรือ<br />อ.บางละมุง จ.ชลบุรี 20260</div>
           </div>
-          <div className={styles.col} style={{float: 'right', fontSize: '12px'}}>
-            <img src={require('../assets/images/phone-icon.png')} width='10' style={{marginRight: '5px'}} />T.xxx-xxx-xxxx <br />
-            <img src={require('../assets/images/clock-icon.png')} width='10' style={{marginRight: '5px'}} />เวลาเปิด: XX:XX - XX:XX
+          <div className={styles.col} style={{ float: 'right', fontSize: '12px' }}>
+            <img src={require('../assets/images/phone-icon.png')} width='10' style={{ marginRight: '5px' }} />T.xxx-xxx-xxxx <br />
+            <img src={require('../assets/images/clock-icon.png')} width='10' style={{ marginRight: '5px' }} />เวลาเปิด: XX:XX - XX:XX
           </div>
         </div>
         <div className={styles.transportInformationContainer}>
@@ -29,7 +58,7 @@ const LocationSection = React.createClass({
             <h3>การเดินทางโดยรถยนต์ส่วนบุคคล<br />(PERSONAL TRANSPORTATION)</h3>
             <div>
               <img src={require('../assets/images/person-icon.png')} />
-              <div style={{display: 'inline-block'}}>
+              <div style={{ display: 'inline-block' }}>
                 <h4>ถนนสุขุมวิท (ทางหลวงหมายเลข 3)</h4>
                 <ul>
                   <li>
@@ -47,7 +76,7 @@ const LocationSection = React.createClass({
                     พัทยาใต้) จากนั้นให้เลี้ยวซ้ายเข้าสู่ถนนเทพประสิทธิ์ ขับตรงมา<br />เรื่อยๆราว 2 กม. จะเห็น SINGHA D’LUCK Cinematic<br />
                     Theatre อยู่ทางด้านขวามือ
                   </li>
-                  <h4 style={{margin: '10px 0'}}>มอเตอร์เวย์​ (ทางหลวงพิเศษหมายเลข 7)</h4>
+                  <h4 style={{ margin: '10px 0' }}>มอเตอร์เวย์​ (ทางหลวงพิเศษหมายเลข 7)</h4>
                   <li>จากกรุงเทพฯ<br />
                     ขับตรงมาเรื่อยจนถึงทางออกบริเวณพัทยาเหนือ<br />
                     จากนั้นเลี้ยวซ้ายเข้าสู่ถนนสุขุมวิท แล้วขับตรงไปเรื่อยๆ<br />
@@ -60,11 +89,11 @@ const LocationSection = React.createClass({
               </div>
             </div>
           </div>
-          <div className={styles.col} style={{width: 'auto', float: 'right'}}>
+          <div className={styles.col} style={{ width: 'auto', float: 'right' }}>
             <h3>การเดินทางโดยขนส่งสาธารณะ<br />(PUBLIC TRANSPORTATION)</h3>
             <div>
               <img src={require('../assets/images/public-icon.png')} />
-              <div style={{display: 'inline-block'}}>
+              <div style={{ display: 'inline-block' }}>
                 <h4>การเดินทางภายในเมืองพัทยา (Public Transportation)</h4>
                 <ul>
                   <li>
@@ -79,7 +108,7 @@ const LocationSection = React.createClass({
             </div>
             <div>
               <img src={require('../assets/images/plane-icon.png')} />
-              <div style={{display: 'inline-block'}}>
+              <div style={{ display: 'inline-block' }}>
                 <h4>การเดินทางจากสนามบิน (From Airport)</h4>
                 <h4>ท่าอากาศยานสุวรรณภูมิ (Suvarnabhumi Airport)</h4>
                 <ul>
