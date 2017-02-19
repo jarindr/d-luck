@@ -1,7 +1,8 @@
 import { Link } from 'react-router'
 import React from 'react'
-import styles from './NavBar.styl'
 import cx from 'classnames'
+import styles from './NavBar.styl'
+import LanguageDropdown from './languageDropdown'
 const NavBar = React.createClass({
   getInitialState () {
     return {
@@ -12,7 +13,7 @@ const NavBar = React.createClass({
     this.setState({ mobileMenu: !this.state.mobileMenu })
   },
   render () {
-    const classNameNav = cx([styles.navigationContainer], {[styles.active]: this.state.mobileMenu})
+    const classNameNav = cx([styles.navigationContainer], { [styles.active]: this.state.mobileMenu })
     return (
       <div className={styles.container}>
         <div className={styles.navigationLogo}>
@@ -25,14 +26,27 @@ const NavBar = React.createClass({
           <span></span>
         </div>
         <div className={classNameNav}>
-          <span className={styles.navItem}><a target='_blank' href='https://kaanshow-ec4c0.firebaseapp.com'>KAAN SHOW</a></span>
-          <span className={styles.navItem} style={{ color: 'black' }}>D'LUCK</span>
-          <span className={styles.navItem}><a target='_blank' href='https://punjaluck-a28c1.firebaseapp.com/'>PANJALUCK</a></span>
-          <span className={styles.navItem}>LANGUAGE</span>
+          <div className={styles.languageDropdownMobile}>
+            <LanguageDropdown
+              selectOptions={['TH', 'EN', 'JP', 'CN']}
+              selectIndex={0}
+              onChange={this.onSelectChange}
+            />
+          </div>
+          <span className={styles.navItem}><Link to='https://kaanshow-ec4c0.firebaseapp.com'>KAAN SHOW</Link></span>
+          <span className={styles.navItem} style={{ color: 'black' }}><a href='/' target='_blank'>D'LUCK</a></span>
+          <span className={styles.navItem}><a href='https://punjaluck-a28c1.firebaseapp.com/' target='_blank'>PANJALUCK</a></span>
+          <span className={`${styles.navItem} ${styles.languageDropdown}`}>
+            <LanguageDropdown
+              selectOptions={['TH', 'EN', 'JP', 'CN']}
+              selectIndex={0}
+              onChange={this.onSelectChange}
+            />
+          </span>
           <span className={styles.navItem}>
             <i className='flaticon-search'></i>
           </span>
-          <a href='https://kaanshow-ec4c0.firebaseapp.com/ticket/type/' target='_blank'><span className={`${styles.navItem} ${styles.ticket}`}>TICKET</span></a>
+          <Link to='/ticket/type/' target='_blank'><span className={`${styles.navItem} ${styles.ticket}`}>TICKET</span></Link>
         </div>
       </div>
     )

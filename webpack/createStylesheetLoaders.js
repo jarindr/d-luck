@@ -8,7 +8,7 @@ module.exports = (mode) => [
   },
   {
     test: /\.styl$/,
-    loader: mode.createLoader('css-loader?modules!postcss-loader!stylus-loader'),
+    loader: mode.createLoader('css-loader?modules&localIdentName=[name]-[local]-[hash:base64:5]!postcss-loader!stylus-loader'),
     exclude: /\.global\.styl$/
   },
   {

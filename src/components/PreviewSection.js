@@ -11,7 +11,12 @@ const PreviewSection = React.createClass({
     category: React.PropTypes.array
   },
   componentDidMount () {
-    this.setState({ containerHeight: $(this.refs.container)[0].offsetHeight / Math.ceil(this.props.data.length / 3) * 2 })
+    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    let containerHeight = $(this.refs.container)[0].offsetHeight / Math.ceil(this.props.data.length / 3) * 2
+    if (width < 768) {
+      containerHeight = 2 * $(this.refs.container)[0].offsetHeight / Math.ceil(this.props.data.length)
+    }
+    this.setState({containerHeight})
   },
   getInitialState () {
     return {
@@ -25,7 +30,7 @@ const PreviewSection = React.createClass({
         {x}
       </span>
     ))
-    if (catagories.includes(null)) {
+    if (catagories.indexOf(null) !== -1) {
       return null
     } else {
       return (

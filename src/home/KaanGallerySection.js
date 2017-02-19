@@ -1,7 +1,6 @@
 import ImageModalBox from '../components/ImageModal'
 import PreviewSection from '../components/PreviewSection'
 import React from 'react'
-import Title from '../components/Title'
 import styles from './KaanGallerySection.styl'
 const DATA = [
   {

@@ -33,6 +33,7 @@ const SeatingPlanSection = React.createClass({
   render () {
     return (
       <div className={styles.container}>
+        <h1 className={styles.mobileHeader}>SEATING PLAN</h1>
         <div className={styles.mapContainer}>
           <img src={require('../assets/images/sky-map.png')} style={{opacity: this.state.current === 'sky' ? 1 : 0}} />
           <img src={require('../assets/images/star-map.jpg')} style={{opacity: this.state.current === 'star' ? 1 : 0}} />
@@ -67,7 +68,7 @@ const SeatingPlanSection = React.createClass({
           </map>
         </div>
         <div className={styles.contentContainer}>
-          <div className={styles.content} style={this.getStyleForCurrent('all')}>
+          <div className={`${styles.content} ${styles.default}`} style={this.getStyleForCurrent('all')}>
             <h1>SEATING PLAN</h1>
             <h2>ประเภทของที่นั่ง</h2>
             <p>
