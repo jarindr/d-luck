@@ -2,34 +2,13 @@ import React from 'react'
 import styles from './LocationSection.styl'
 
 const LocationSection = React.createClass({
-  componentDidMount () {
-    this.setState({
-      beaconPosition: {
-        top: this.map.width * 23 / 100,
-        left: this.map.width * 48 / 100
-      }
-    })
-    window.addEventListener('resize', () => {
-      this.setState({
-        beaconPosition: {
-          top: this.map.width * 23 / 100,
-          left: this.map.width * 48 / 100
-        }
-      })
-    })
-  },
-  getInitialState () {
-    return {
-      beaconPosition: {}
-    }
-  },
   render () {
     return (
       <div className={styles.container}>
         <h1>LOCATION & MAP</h1>
         <div className={styles.mapContainer}>
-          <img ref={e => this.map = e} src={require('../assets/images/dluck-map.png')} className={styles.map} />
-          <div className={styles.beaconContainer} ref={e => this.beacon = e} style={{ top: this.state.beaconPosition.top, left: this.state.beaconPosition.left }}>
+          <img src={require('../assets/images/dluck-map.png')} className={styles.map} />
+          <div className={styles.beaconContainer}>
             <img
               src={require('../assets/images/beacon.png')}
               onClick={() => window.open('https://goo.gl/maps/7y8bpXgA7M52', '_blank')}
