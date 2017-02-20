@@ -33,7 +33,7 @@ const NavBar = React.createClass({
               onChange={this.onSelectChange}
             />
           </div>
-          <span className={styles.navItem}><a to='https://kaanshow-ec4c0.firebaseapp.com'>KAAN SHOW</a></span>
+          <span className={styles.navItem}><a href='https://kaanshow-ec4c0.firebaseapp.com' target='_blank'>KAAN SHOW</a></span>
           <span className={styles.navItem} style={{ color: 'black' }}><a href='/' target='_blank'>D'LUCK</a></span>
           <span className={styles.navItem}><a href='https://punjaluck-a28c1.firebaseapp.com/' target='_blank'>PANJALUCK</a></span>
           <span className={`${styles.navItem} ${styles.languageDropdown}`}>
