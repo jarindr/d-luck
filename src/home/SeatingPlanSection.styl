@@ -5,6 +5,14 @@
   .mobileHeader
     display none
     font-size 40px
+.mapContainerPopUp
+  display: inline-block;
+  width: 50%;
+  text-align center
+  background white
+  vertical-align middle
+  img
+    width 90%
 .mapContainer
   display: inline-block;
   width: 50%;
@@ -30,6 +38,39 @@
     vertical-align: middle;
     width: 25px
     margin: 10px
+.modal
+  z-index 99
+  position fixed
+  left 0
+  right 0
+  top 0
+  background rgba(0, 0, 0, 0.9)!important
+  bottom 0
+.closeButton
+  width 30px
+  position absolute
+  right 20px
+  top 20px
+  z-index 9999999999999
+.modalMapContainer
+  position absolute
+  width 70%
+  margin 0 auto
+  z-index 1000
+  top 50%
+  left 0
+  background white
+  right 0
+  transform translateY(-50%)
+.contentContainer.popup
+  height auto
+  background black
+  vertical-align middle
+  .content
+    width auto
+    position static
+    transform translateY(0)!important
+    padding 50px
 .contentContainer
   text-align left;
   display: inline-block;
@@ -106,3 +147,12 @@
       padding 0 5%
     .content.default
       top 30%
+@media screen and (max-width 500px)
+  .mapContainerPopUp
+    width 100%
+  .modalMapContainer
+    top 80px
+    transform translateY(0)
+    width 100%
+  .modal
+    overflow auto
