@@ -10,6 +10,8 @@
   width: 50%;
   text-align center
   background white
+  position relative
+  z-index 100
   vertical-align middle
   img
     width 90%
@@ -48,10 +50,11 @@
   bottom 0
 .closeButton
   width 30px
+  cursor pointer
   position absolute
   right 20px
   top 20px
-  z-index 9999999999999
+  z-index 200
 .modalMapContainer
   position absolute
   width 70%
@@ -147,7 +150,7 @@
       padding 0 5%
     .content.default
       top 30%
-@media screen and (max-width 500px)
+@media screen and (max-width 800px)
   .mapContainerPopUp
     width 100%
   .modalMapContainer

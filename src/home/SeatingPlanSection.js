@@ -56,29 +56,21 @@ const SeatingPlanSection = React.createClass({
     }
   },
   onChangeState (state, click) {
-    if (this.state.isClicked && click !== 'click') {
+    if (click !== 'click') {
       return (e) => {
-        this.setState({isModalOpen: true})
+        this.setState({isModalOpen: false, current: state})
       }
     } else {
       return (e) => {
-        if (click) this.setState({isClicked: true})
         e.preventDefault()
-        this.setState({current: state})
+        this.setState({current: state, isModalOpen: true})
       }
-    }
-  },
-  getStyleForCurrent (state) {
-    if (state === 'all' && !this.state.isClicked) {
-      return {opacity: 1, zIndex: 2}
-    } else {
-      return this.state.current === state && this.state.isClicked ? {opacity: 1, zIndex: 2} : {opacity: 0, zIndex: 1}
     }
   },
   renderModalPopUp (x) {
     return (
       <Modal
-        isOpen={this.state.current === x.key && this.state.isClicked}
+        isOpen={this.state.current === x.key && this.state.isModalOpen}
         onRequestClose={this.closeModal}
         className={styles.modal}
       >
@@ -124,7 +116,7 @@ const SeatingPlanSection = React.createClass({
               useMap="#Map"
               style={{
                 opacity: this.state.current === 'all' ? 1 : 0,
-                zIndex: 10
+                zIndex: 1
               }}
               onMouseOut={this.onChangeState('all')}
             />
@@ -164,19 +156,19 @@ const SeatingPlanSection = React.createClass({
               แทนมุมมองของ การมองเห็น เพื่อให้คุณรู้สึกเสมือนได้ผจญภัย
               ไปในโลกใบใหม่ที่เต็มไปด้วยเรื่องราวเหนือจินตนาการ
             </p>
-            <div className={styles.seatContainer} onClick={this.onChangeState('sky')} >
+            <div className={styles.seatContainer} onClick={this.onChangeState('sky', 'click')}>
               <img src={require('../assets/images/purple-seat.png')} />
               Sky Zone
             </div>
-            <div className={styles.seatContainer} onClick={this.onChangeState('ocean')}>
+            <div className={styles.seatContainer} onClick={this.onChangeState('ocean', 'click')}>
               <img src={require('../assets/images/ocean-seat.png')} />
               Ocean Zone
             </div>
-            <div className={styles.seatContainer} onClick={this.onChangeState('cloud')}>
+            <div className={styles.seatContainer} onClick={this.onChangeState('cloud', 'click')}>
               <img src={require('../assets/images/sky-seat.png')} />
               Cloud Zone
             </div>
-            <div className={styles.seatContainer} onClick={this.onChangeState('star')}>
+            <div className={styles.seatContainer} onClick={this.onChangeState('star', 'click')}>
               <img src={require('../assets/images/star.png')} />
               Star Zone
             </div>
