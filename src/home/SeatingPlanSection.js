@@ -35,12 +35,20 @@ const SeatingPlanSection = React.createClass({
       <div className={styles.container}>
         <h1 className={styles.mobileHeader}>SEATING PLAN</h1>
         <div className={styles.mapContainer}>
-          <img src={require('../assets/images/sky-map.png')} style={{opacity: this.state.current === 'sky' ? 1 : 0}} />
-          <img src={require('../assets/images/star-map.jpg')} style={{opacity: this.state.current === 'star' ? 1 : 0}} />
-          <img src={require('../assets/images/ocean-map.png')} style={{opacity: this.state.current === 'ocean' ? 1 : 0}} />
-          <img src={require('../assets/images/cloud-map.png')} style={{opacity: this.state.current === 'cloud' ? 1 : 0}} />
+          <img src={require('../assets/images/sky-map-hover.png')} style={{opacity: this.state.current === 'sky' ? 1 : 0}} />
+          <img src={require('../assets/images/star-map-hover.png')} style={{opacity: this.state.current === 'star' ? 1 : 0}} />
+          <img src={require('../assets/images/ocean-map-hover.png')} style={{opacity: this.state.current === 'ocean' ? 1 : 0}} />
+          <img src={require('../assets/images/cloud-map-hover.png')} style={{opacity: this.state.current === 'cloud' ? 1 : 0}} />
           <map name="Map" id="Map">
-            <img src={require('../assets/images/map.png')} useMap="#Map" style={{opacity: this.state.current === 'all' ? 1 : 0, zIndex: 10}} />
+            <img
+              src={require('../assets/images/map.png')}
+              useMap="#Map"
+              style={{
+                opacity: this.state.current === 'all' ? 1 : 0,
+                zIndex: 100
+              }}
+              onMouseOut={this.onChangeState('all')}
+            />
             <area
               shape="poly"
               coords="77,143,129,248,6,313,6,29,217,4,381,8,476,13,592,37,588,297,486,236,524,141,388,94,229,89"
@@ -67,7 +75,7 @@ const SeatingPlanSection = React.createClass({
             />
           </map>
         </div>
-        <div className={styles.contentContainer}>
+        <div className={styles.contentContainer} onMouseEnter={this.onChangeState('all')}>
           <div className={`${styles.content} ${styles.default}`} style={this.getStyleForCurrent('all')}>
             <h1>SEATING PLAN</h1>
             <h2>ประเภทของที่นั่ง</h2>
