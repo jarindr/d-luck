@@ -1,3 +1,4 @@
+import FacilitiesSection from './FacilitiesSection'
 import Footer from '../components/Footer'
 import IntroSection from './IntroSection'
 import KaanGallerySection from './KaanGallerySection'
@@ -87,7 +88,7 @@ const MainPage = React.createClass({
             <SeatingPlanSection />
           </div>
           <div id='FACILITIES' className={styles.sectionContainer}>
-            <KaanGallerySection />
+            <FacilitiesSection />
           </div>
           <div id='LOCATION-MAP' style={{backgroundColor: '#fcfcfc'}} className={styles.sectionContainer}>
             <LocationSection />

@@ -90,8 +90,12 @@
   img
     height: 20px
     margin-right: 20px
-@media screen and (max-width:768px)
+    filter brightness(40%)
+@media screen and (max-width:1000px)
+  .container
+    width 100%
   .siteMapContact
+    padding: 30px 5%
     .siteMap
       width: 100%
     .contact
@@ -99,21 +103,25 @@
       .contactFrom
         input
           width: 100%
+          box-sizing border-box
+          max-width none
         textarea
           width: 100%
-
-@media screen and (max-width:450px)
-  .siteMapContact
+          margin 5px 0
+          box-sizing border-box
+        button
+          margin 5px 0
+  .socialCaption
     display none
+@media screen and (max-width:450px)
+  .container
+    width 100%
+    .socialFeed
+      .socialBlock
+        flex 1 1 25%
+        height 20vw
+  .siteMapContact
     .siteMap
       display: none
     .siteMapBlock
-      width: 100%
-  .footerBar
-    font-size 7px
-    vertical-align middle
-    white-space nowrap
-  .toTop
-    img
-      width 7px!important
-      vertical-align middle
+      width: 100%!important
