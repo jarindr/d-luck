@@ -1,8 +1,9 @@
+import LanguageDropdown from './languageDropdown'
 import { Link } from 'react-router'
 import React from 'react'
+import SearchInput from './SearchInput'
 import cx from 'classnames'
 import styles from './NavBar.styl'
-import LanguageDropdown from './languageDropdown'
 const NavBar = React.createClass({
   getInitialState () {
     return {
@@ -11,6 +12,9 @@ const NavBar = React.createClass({
   },
   onClickHamberger () {
     this.setState({ mobileMenu: !this.state.mobileMenu })
+  },
+  onClickSearch () {
+    this.setState({search: !this.state.search})
   },
   render () {
     const classNameNav = cx([styles.navigationContainer], { [styles.active]: this.state.mobileMenu })
@@ -44,7 +48,8 @@ const NavBar = React.createClass({
             />
           </span>
           <span className={styles.navItem}>
-            <i className='flaticon-search'></i>
+            <img src={require('../assets/images/search.png')} className={styles.search} onClick={this.onClickSearch} />
+            <SearchInput active={this.state.search} />
           </span>
           <Link to='/ticket/type/' target='_blank'><span className={`${styles.navItem} ${styles.ticket}`}>TICKET</span></Link>
         </div>

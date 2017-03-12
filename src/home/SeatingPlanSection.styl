@@ -12,9 +12,12 @@
   background white
   position relative
   z-index 100
+  background-color white
   vertical-align middle
+  display table-cell
   img
-    width 90%
+    width 100%
+    padding 50px 0
 .mapContainer
   display: inline-block;
   width: 50%;
@@ -59,22 +62,27 @@
   position absolute
   width 70%
   margin 0 auto
+  display table
+  align-items center
   z-index 1000
   top 50%
   left 0
-  background white
+  background-color white
   right 0
   transform translateY(-50%)
 .contentContainer.popup
   height auto
   background black
   vertical-align middle
+  display table-cell
   .content
     width auto
+    max-width 700px
     position static
     transform translateY(0)!important
     padding 50px
 .contentContainer
+  background black
   text-align left;
   display: inline-block;
   width: 50%

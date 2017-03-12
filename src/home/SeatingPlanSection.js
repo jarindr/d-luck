@@ -75,15 +75,15 @@ const SeatingPlanSection = React.createClass({
         className={styles.modal}
       >
         <div className={styles.modalMapContainer}>
+          <img
+            src={require('../assets/images/closeButton.png')}
+            className={styles.closeButton}
+            onClick={() => this.setState({current: 'all'})}
+          />
           <div className={styles.mapContainerPopUp}>
             <img src={x.image} />
           </div>
           <div className={`${styles.contentContainer} ${styles.popup}`}>
-            <img
-              src={require('../assets/images/closeButton.png')}
-              className={styles.closeButton}
-              onClick={() => this.setState({current: 'all'})}
-            />
             <div className={styles.content}>
               <h1>SEATING PLAN</h1>
               <h3><img src={x.imageSeat} /> {x.title}</h3>
@@ -106,13 +106,13 @@ const SeatingPlanSection = React.createClass({
         {Object.keys(DATASEAT).map(x => this.renderModalPopUp(DATASEAT[x]))}
         <h1 className={styles.mobileHeader}>SEATING PLAN</h1>
         <div className={styles.mapContainer}>
-          <img src={require('../assets/images/sky-map-hover.png')} style={{opacity: this.state.current === 'sky' ? 1 : 0}} />
-          <img src={require('../assets/images/star-map-hover.png')} style={{opacity: this.state.current === 'star' ? 1 : 0}} />
-          <img src={require('../assets/images/ocean-map-hover.png')} style={{opacity: this.state.current === 'ocean' ? 1 : 0}} />
-          <img src={require('../assets/images/cloud-map-hover.png')} style={{opacity: this.state.current === 'cloud' ? 1 : 0}} />
+          <img src={require('../assets/images/map/D\'LUCK_Website (1280x800px)_03-0 Seating Plan_When Mouse Over Skyzone_r13_bo.png')} style={{opacity: this.state.current === 'sky' ? 1 : 0}} />
+          <img src={require('../assets/images/map/D\'LUCK_Website (1280x800px)_03-0 Seating Plan_When Mouse Over Starzone_r13_bo.png')} style={{opacity: this.state.current === 'star' ? 1 : 0}} />
+          <img src={require('../assets/images/map/D\'LUCK_Website (1280x800px)_03-0 Seating Plan_When Mouse Over Oceanzone_r13_bo.png')} style={{opacity: this.state.current === 'ocean' ? 1 : 0}} />
+          <img src={require('../assets/images/map/D\'LUCK_Website (1280x800px)_03-0 Seating Plan_When Mouse Over Cloudzone_r13_bo.png')} style={{opacity: this.state.current === 'cloud' ? 1 : 0}} />
           <map name="Map" id="Map">
             <img
-              src={require('../assets/images/map.png')}
+              src={require('../assets/images/map/D\'LUCK_Website (1280x800px)_03-0 Seating Plan_r13_bo.png')}
               useMap="#Map"
               style={{
                 opacity: this.state.current === 'all' ? 1 : 0,
@@ -122,25 +122,25 @@ const SeatingPlanSection = React.createClass({
             />
             <area
               shape="poly"
-              coords="77,143,129,248,6,313,6,29,217,4,381,8,476,13,592,37,588,297,486,236,524,141,388,94,229,89"
+              coords="68,675,89,694,281,568,180,371,297,318,465,286,603,262,821,301,907,312,1028,372,956,543,1135,657,1159,612,1144,187,981,118,928,121,795,98,728,108,456,120,415,95,262,130,208,122,47,187"
               onClick={this.onChangeState('sky', 'click')}
               onMouseOver={this.onChangeState('sky')}
             />
             <area
               shape="poly"
-              coords="86,142,218,100,375,100,516,142,489,199,378,159,243,159,113,195"
+              coords="252,481,198,371,315,319,448,294,598,274,742,291,898,317,1020,375,964,484,839,427,735,406,611,393,364,430"
               onClick={this.onChangeState('cloud', 'click')}
               onMouseOver={this.onChangeState('cloud')}
             />
             <area
               shape="poly"
-              coords="118,202,225,169,361,163,491,204,476,239,317,196,179,222,135,239"
+              coords="253,483,352,443,461,419,605,401,718,412,856,440,958,482,928,554,726,490,494,494,294,558"
               onClick={this.onChangeState('star', 'click')}
               onMouseOver={this.onChangeState('star')}
             />
             <area
               shape="poly"
-              coords="37,354,152,263,230,237,319,231,378,248,575,350,487,436,314,363,126,442"
+              coords="106,764,338,614,596,558,876,610,1108,777,965,929,794,821,554,793,355,868,246,926"
               onClick={this.onChangeState('ocean', 'click')}
               onMouseOver={this.onChangeState('ocean')}
             />
