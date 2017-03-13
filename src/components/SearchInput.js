@@ -11,6 +11,14 @@ const SearchInput = React.createClass({
       matches: []
     }
   },
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.active) {
+      $(this.refs.input).focus()
+    }
+  },
+  componentDidMount () {
+    $(this.refs.input).focus()
+  },
   onChange (e) {
     this.findTargetFromSeach(this.input.value)
     this.setState({value: e.target.value})
@@ -47,18 +55,20 @@ const SearchInput = React.createClass({
     )
   },
   render () {
-    return (
+    return this.props.active
+    ? (
       <span className={styles.container}>
         <input
           ref={x => this.input = x}
           className={styles.searchInput}
           onChange={(e) => this.onChange(e)}
           onKeyPress={e => this.onkeyPress(e)}
-          style={{display: !this.props.active ? 'none' : 'block'}}
+          autoFocus
         />
         {this.renderSuggesionBox()}
       </span>
-    )
+      )
+    : null
   }
 })
 
