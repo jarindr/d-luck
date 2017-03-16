@@ -1,5 +1,6 @@
 import FlipMove from 'react-flip-move'
 import React from 'react'
+import ResponsiveSlider from '../components/SingleSliderResponsive'
 import getYouTubeID from 'get-youtube-id'
 import styles from './PreviewSection.styl'
 const PreviewSection = React.createClass({
@@ -51,7 +52,11 @@ const PreviewSection = React.createClass({
         onClick={this.props.onClickPreview.bind(null, i)}
       >
         <div className={styles.imageContainer} style={{ background: `url(${imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-          <img src={require('../assets/images/play_new.png')} className={styles.playButton} hidden={!(/(youtube)/.test(data.url))} />
+          <img
+            src={require('../assets/images/play_new.png')}
+            className={styles.playButton}
+            style={{opacity: (/(youtube)/.test(data.url)) ? 1 : 0}}
+          />
         </div>
         <div className={styles.caption} hidden={!data.caption}>
           {data.caption}
@@ -92,6 +97,9 @@ const PreviewSection = React.createClass({
     return (
       <div className={styles.container}>
         {this.renderCatagory()}
+        <div className={styles.responsiveSliderContainer}>
+          <ResponsiveSlider data={this.renderPreviewBlocks()} />
+        </div>
         <div
           className={`${styles.previewBlocksContainer} customScrollBar`}
           id='hack-check-height'

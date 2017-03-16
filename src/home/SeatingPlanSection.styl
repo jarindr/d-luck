@@ -49,15 +49,17 @@
   left 0
   right 0
   top 0
-  background rgba(0, 0, 0, 0.9)!important
+  background rgba(255, 255, 255, 0.1)!important
   bottom 0
-.closeButton
+.closeButton, .closeButtonResponsive
   width 30px
   cursor pointer
   position absolute
   right 20px
   top 20px
   z-index 200
+.closeButtonResponsive
+  display none
 .modalMapContainer
   position absolute
   width 70%
@@ -139,6 +141,20 @@
     font-size: 16px
     span
       font-weight: 400
+@media screen and (max-width 800px)
+  .mapContainerPopUp
+    width 100%
+    display block!important
+  .modalMapContainer
+    top 0
+    transform translateY(0)
+    width 100%
+  .modal
+    overflow auto
+  .closeButtonResponsive
+    display block
+  .closeButton
+    display none
 @media screen and (max-width 768px)
   .container
     .mobileHeader
@@ -159,13 +175,12 @@
       padding 0 5%
     .content.default
       top 30%
-@media screen and (max-width 800px)
-  .mapContainerPopUp
-    width 100%
-    display block!important
-  .modalMapContainer
-    top 0
-    transform translateY(0)
-    width 100%
-  .modal
-    overflow auto
+@media screen and (max-width 450px)
+  .contentContainer.popup
+    .content
+      padding-left 5%
+      padding-right 5%
+    .content
+      button
+        padding-left 50px
+        padding-right 50px

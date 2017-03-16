@@ -69,6 +69,7 @@
     "react-modal": "^1.5.2",
     "react-router": "^2.4.1",
     "react-router-scroll": "^0.3.2",
+    "react-slick": "^0.14.7",
     "scroll-to-element": "^2.0.0"
   }
 }

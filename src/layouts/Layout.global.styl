@@ -5,6 +5,9 @@
     // This selector should be overridden by the `&--after-open` class below
     opacity: 0;
 }
+.ReactModal__Body--open {
+  overflow hidden
+}
 .ReactModal__Overlay {
     transition: opacity 200ms ease-in-out;
     background: rgba(0, 0, 0, 0.15);
@@ -28,6 +31,8 @@ body {
     padding: 0;
     font-style:normal;
     background-color: white;
+    height 100%
+    overflow hidden
 }
 
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -41,10 +46,21 @@ body {
 
 /* Document
    ========================================================================== */
+#app {
+  overflow auto
+  position absolute
+  left 0
+  right 0
+  bottom 0
+  top 0
+  -webkit-overflow-scrolling: touch;
+}
 div {
   box-sizing: border-box;
 }
 html {
+  height 100%
+  overflow hidden
   font-family: sans-serif; /* 1 */
   line-height: 1.15; /* 2 */
   -ms-text-size-adjust: 100%; /* 3 */

@@ -38,7 +38,7 @@ const DATASEAT = {
     title: 'SKY ZONE',
     image: require('../assets/images/sky-map.png'),
     imageSeat: require('../assets/images/purple-seat.png'),
-    content: `่ที่นั่งโซนราคาคุ้มค่านี้ อยู่ในจุดรับชมการแสดงที่ถัดออกมาจากโซนอื่นๆ เบาะที่นั่งมีความกว้าง 51 ซม. คุณจะรับชมการแสดงแบบองค์รวมได้อย่างครบอรรถรสที่สุด
+    content: `ที่นั่งโซนราคาคุ้มค่านี้ อยู่ในจุดรับชมการแสดงที่ถัดออกมาจากโซนอื่นๆ เบาะที่นั่งมีความกว้าง 51 ซม. คุณจะรับชมการแสดงแบบองค์รวมได้อย่างครบอรรถรสที่สุด
     สามารถมองเห็นรายละเอียดการแสดงที่เกิดขึ้นได้ทั่วทั้งหมด พร้อมกันนี้คุณจะได้ตื่นตาตื่นใจกับฉากหลังสุดอลังการไม่แพ้โซนอื่นๆ เช่นกัน`,
     price: '2,500',
     link: 'http://uat-www.pandapass.asia/booking/external/5?ticketClassTypeName=Sky'
@@ -48,6 +48,10 @@ const SeatingPlanSection = React.createClass({
   componentDidMount () {
     require('../assets/js/imageMap')
     $('img[usemap]').rwdImageMaps()
+    Object.keys(DATASEAT).map(x => {
+      const image = new Image()
+      image.src = DATASEAT[x].image
+    })
   },
   getInitialState () {
     return {
@@ -62,10 +66,17 @@ const SeatingPlanSection = React.createClass({
       }
     } else {
       return (e) => {
-        e.preventDefault()
-        this.setState({current: state, isModalOpen: true})
+        this.setState({ current: state, isModalOpen: true }, () => {
+          if ($(window).width() < 900) {
+            // $('body').css({position: 'fixed'})
+          }
+        })
       }
     }
+  },
+  closeModal () {
+    $('body').css({position: 'static'})
+    window.scrollTo(0, this.state.currentScroll)
   },
   renderModalPopUp (x) {
     return (
@@ -78,7 +89,20 @@ const SeatingPlanSection = React.createClass({
           <img
             src={require('../assets/images/closeButton.png')}
             className={styles.closeButton}
-            onClick={() => this.setState({current: 'all'})}
+            onClick={() => {
+              $('body').css({position: 'static'})
+              window.scrollTo(0, this.state.currentScroll)
+              this.setState({current: 'all', isModalOpen: false})
+            }}
+          />
+          <img
+            src={require('../assets/images/closeButtonBlack.png')}
+            className={styles.closeButtonResponsive}
+            onClick={() => {
+              $('body').css({position: 'static'})
+              window.scrollTo(0, this.state.currentScroll)
+              this.setState({current: 'all', isModalOpen: false})
+            }}
           />
           <div className={styles.mapContainerPopUp}>
             <img src={x.image} />
@@ -137,6 +161,7 @@ const SeatingPlanSection = React.createClass({
               coords="253,483,352,443,461,419,605,401,718,412,856,440,958,482,928,554,726,490,494,494,294,558"
               onClick={this.onChangeState('star', 'click')}
               onMouseOver={this.onChangeState('star')}
+
             />
             <area
               shape="poly"
