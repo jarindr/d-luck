@@ -29,11 +29,6 @@ const DATA = [
     type: 'show'
   },
   {
-    url: require('../home/assets/kaanGallery/KAAN-Gallery_Thumbnail-(500x350px)_06_ch.png'),
-    image: require('../home/assets/kaanGallery/KAAN-Gallery_Full-Screen-(855x575px)_01-Character_ch.png'),
-    type: 'show'
-  },
-  {
     url: require('../home/assets/kaanGallery/KAAN-Gallery_Thumbnail-(500x350px)_01-Character_ch.png'),
     image: require('../home/assets/kaanGallery/KAAN-Gallery_Full-Screen-(855x575px)_01-Character_ch.png'),
     type: 'character'
@@ -62,11 +57,6 @@ const DATA = [
     url: require('../home/assets/kaanGallery/KAAN-Gallery_Thumbnail-(500x350px)_06-Character_ch.png'),
     image: require('../home/assets/kaanGallery/KAAN-Gallery_Full-Screen-(855x575px)_06-Character_ch.png'),
     type: 'character'
-  },
-  {
-    url: require('../assets/images/characters/GinnaRee-small.jpg'),
-    image: require('../assets/images/characters/GinnaRee-small.jpg'),
-    type: 'show'
   },
   {
     url: require('../assets/images/characters/crocodilewife-small.jpg'),

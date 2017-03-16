@@ -18,10 +18,10 @@ const MainPage = React.createClass({
   },
   componentDidMount () {
     this.checkNavScroll()
-    window.addEventListener('scroll', this.checkNavScroll)
+    $('#app')[0].addEventListener('scroll', this.checkNavScroll)
   },
   componentWillUnmount () {
-    window.removeEventListener('scroll', this.checkNavScroll)
+    $('#app')[0].removeEventListener('scroll', this.checkNavScroll)
   },
   checkNavScroll () {
     const scrollPosition = $(window).scrollTop()
@@ -30,6 +30,7 @@ const MainPage = React.createClass({
       const $section = $(`#${id}`)
       const top = $section.offset().top - 81 - 50
       const bottom = top + $section.outerHeight(true)
+      console.log(scrollPosition, bottom)
       if (bottom > scrollPosition && top < scrollPosition) {
         $(el).addClass(styles.white)
       } else {
