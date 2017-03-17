@@ -14,9 +14,9 @@ const Layout = React.createClass({
         <Helmet
           titleTemplate=''
           defaultTitle=''
-          script={[{
-            src: 'https://cdn.polyfill.io/v2/polyfill.min.js'
-          }]}
+          script={[
+            { src: 'https://cdn.polyfill.io/v2/polyfill.min.js' }
+          ]}
           link={[
             {
               href: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',

@@ -60,6 +60,8 @@
     "get-youtube-id": "^1.0.0",
     "history": "^3.0.0",
     "jquery": "^3.1.1",
+    "jquery.easing": "^1.4.1",
+    "jquery.scrollto": "^2.1.2",
     "normalize.css": "^4.1.1",
     "react": "^15.1.0",
     "react-click-outside": "^2.2.0",

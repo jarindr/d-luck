@@ -6,14 +6,14 @@ import LocationSection from './LocationSection'
 import React from 'react'
 import SeatingPlanSection from './SeatingPlanSection'
 import { checkRectIntersection } from '../utils/intersection'
-import scrollTo from 'scroll-to-element'
 import styles from './HomePage.styl'
 const SIDENAV = ['ABOUT<br>D\'LUCK', 'GALLERY', 'SEATING PLAN', 'FACILITIES', 'LOCATION MAP']
+require('jquery.scrollto')
+require('jquery.easing')
 const MainPage = React.createClass({
   getInitialState () {
     return {
-      currentSection: 'ABOUT-DLUCK',
-      navigateBySide: false
+      currentSection: 'ABOUT-DLUCK'
     }
   },
   componentDidMount () {
@@ -24,13 +24,12 @@ const MainPage = React.createClass({
     $('#app')[0].removeEventListener('scroll', this.checkNavScroll)
   },
   checkNavScroll () {
-    const scrollPosition = $(window).scrollTop()
+    const scrollPosition = $('#app').scrollTop()
     $(`.${styles.circle}`).each((index, el) => {
       const id = $(el).attr('data-attribute').replace(/'/g, '')
       const $section = $(`#${id}`)
-      const top = $section.offset().top - 81 - 50
+      const top = scrollPosition + $section.offset().top - 81 - 50
       const bottom = top + $section.outerHeight(true)
-      console.log(scrollPosition, bottom)
       if (bottom > scrollPosition && top < scrollPosition) {
         $(el).addClass(styles.white)
       } else {
@@ -55,14 +54,8 @@ const MainPage = React.createClass({
   },
   onClickCircle (text, e) {
     const id = text.replace(/ /g, '-').replace(/<br>/g, '-').replace(/'/g, '')
-    this.setState({currentSection: id, navigateBySide: true}, () => {
-      scrollTo(`#${id}`, {
-        ease: 'inOutExpo',
-        duration: 1500
-      })
-      setTimeout(() => {
-        this.setState({navigateBySide: false})
-      }, 1600)
+    this.setState({currentSection: id}, () => {
+      $('#app').scrollTo($(`#${id}`), 1500, {easing: 'easeInOutExpo'})
     })
   },
   renderCircle (text, i) {
