@@ -119,15 +119,17 @@ const Footer = React.createClass({
               </div>
             </div>
             <div className={styles.contact}>
-              <h2>CONTACT</h2>
-              <div className={styles.siteMapBlock} style={{width: '40%'}}>
-                <ul>
-                  <li>CONTACT</li>
-                  <li>
-                    <span style={{fontFamily: 'kanit', fontSize: '14px'}}>บริษัท ปัญลักษณ์พาสุข จำกัด <br />เลขที่ 202 อาคาร เลอ คองคอร์ด <br />ห้อง 1601 ชั้น 16 ถ.รัชดาภิเษก <br />แขวงห้วยขวาง กรุงเทพฯ 10310</span>
-                  </li>
-                </ul>
-              </div>
+               <h2>CONTACT</h2>
+               <div className={styles.siteMapBlock} style={{width: '40%'}}>
+                 <ul>
+                   <li>CONTACT</li>
+                   <li>
+                     ADDRESS
+                     <br />
+                     <span style={{fontFamily: 'kanit', fontSize: '14px'}}>บริษัท ปัญลักษณ์ พาสุข จำกัด <br />เลขที่ 202 อาคาร เลอ คองคอร์ด <br />ห้อง 1601 ชั้น 16 ถ.รัชดาภิเษก <br />แขวงห้วยขวาง กรุงเทพฯ 10310</span>
+                   </li>
+                 </ul>
+               </div>
               <div className={styles.siteMapBlock} style={{width: '30%'}}>
                 <ul>
                   <li>PHONE</li>
@@ -167,10 +169,10 @@ const Footer = React.createClass({
               </div>
             </div>
           </div>
-          <div className={styles.footerBar}>
-            <span>© 2017 PANJALUCK PASUK CO., LTD. ALL RIGHTS RESERVED.</span>
-            <span onClick={this.onClickToTop} className={styles.toTop} style={{float: 'right', cursor: 'pointer'}}>TO THE TOP <img src={require('../assets/images/to_top.png')} style={{width: '15px', filter: 'brightness(70%)'}} /></span>
-          </div>
+        </div>
+        <div className={styles.footerBar}>
+          <span>© 2017 PANJALUCK PASUK CO., LTD. ALL RIGHTS RESERVED.</span>
+          <span onClick={this.onClickToTop} className={styles.toTop} style={{float: 'right', cursor: 'pointer'}}>TO THE TOP <img src={require('../assets/images/to_top.png')} style={{width: '15px', filter: 'brightness(70%)'}} /></span>
         </div>
       </div>
     )

@@ -51,7 +51,7 @@ const NavBar = React.createClass({
             <img src={require('../assets/images/search.png')} className={styles.search} onClick={this.onClickSearch} />
             <SearchInput active={this.state.search} />
           </span>
-          <Link to='/ticket/type/' target='_blank'><span className={`${styles.navItem} ${styles.ticket}`}>TICKET</span></Link>
+          <Link to='https://kaanshow-ec4c0.firebaseapp.com/ticket/type/' target='_blank'><span className={`${styles.navItem} ${styles.ticket}`}>TICKET</span></Link>
         </div>
       </div>
     )
