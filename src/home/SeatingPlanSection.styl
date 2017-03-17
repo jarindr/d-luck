@@ -28,6 +28,7 @@
     width: 90%
     position: absolute;
     top: 50%
+    z-index 1
     transform: translateY(-50%);
     left: 0
     right: 0
@@ -42,14 +43,23 @@
     vertical-align: middle;
     width: 25px
     margin: 10px
-.modal
-  z-index 99999
+.overlay
+  z-index 9999999
+  background rgba(255, 255, 255, 0.8)!important
   position fixed
+  top 0
   left 0
   right 0
-  top 0
-  background rgba(255, 255, 255, 0.1)!important
   bottom 0
+.modal
+  z-index 99999
+  position absolute
+  width auto
+  right 0
+  left 0
+  margin 0 auto
+  top 50%
+  transform translateY(-50%)
 .closeButton, .closeButtonResponsive
   width 30px
   cursor pointer
@@ -150,6 +160,7 @@
     width 100%
   .modal
     overflow auto
+    height 100%
   .closeButtonResponsive
     display block
   .closeButton

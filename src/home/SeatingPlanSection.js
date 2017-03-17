@@ -77,23 +77,21 @@ const SeatingPlanSection = React.createClass({
   closeModal () {
     $('body').css({position: 'static'})
     window.scrollTo(0, this.state.currentScroll)
+    this.setState({current: 'all', isModalOpen: false})
   },
   renderModalPopUp (x) {
     return (
       <Modal
         isOpen={this.state.current === x.key && this.state.isModalOpen}
-        onRequestClose={this.closeModal}
         className={styles.modal}
+        onRequestClose={this.closeModal}
+        overlayClassName={styles.overlay}
       >
         <div className={styles.modalMapContainer}>
           <img
             src={require('../assets/images/closeButton.png')}
             className={styles.closeButton}
-            onClick={() => {
-              $('body').css({position: 'static'})
-              window.scrollTo(0, this.state.currentScroll)
-              this.setState({current: 'all', isModalOpen: false})
-            }}
+            onClick={this.closeModal}
           />
           <img
             src={require('../assets/images/closeButtonBlack.png')}
@@ -176,7 +174,7 @@ const SeatingPlanSection = React.createClass({
             <h1>SEATING PLAN</h1>
             <h2>ประเภทของที่นั่ง</h2>
             <p>
-              ที่นั่งของสิงห์ดีลักษณ์ ซีเนมาติก เธียเตอร์
+              ที่นั่งของสิงห์ ดีลักษณ์ ซีเนมาติก เธียเตอร์
               ถูกแบ่งออกเป็น 4 โซน แต่ละโซนถูกตั้งชื่อโดยใช้ส่วนต่างๆ ของโลก
               แทนมุมมองของ การมองเห็น เพื่อให้คุณรู้สึกเสมือนได้ผจญภัย
               ไปในโลกใบใหม่ที่เต็มไปด้วยเรื่องราวเหนือจินตนาการ

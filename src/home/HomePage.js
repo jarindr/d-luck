@@ -8,8 +8,6 @@ import SeatingPlanSection from './SeatingPlanSection'
 import { checkRectIntersection } from '../utils/intersection'
 import styles from './HomePage.styl'
 const SIDENAV = ['ABOUT<br>D\'LUCK', 'GALLERY', 'SEATING PLAN', 'FACILITIES', 'LOCATION MAP']
-require('jquery.scrollto')
-require('jquery.easing')
 const MainPage = React.createClass({
   getInitialState () {
     return {
@@ -17,6 +15,8 @@ const MainPage = React.createClass({
     }
   },
   componentDidMount () {
+    require('jquery.scrollto')
+    require('jquery.easing')
     this.checkNavScroll()
     $('#app')[0].addEventListener('scroll', this.checkNavScroll)
   },

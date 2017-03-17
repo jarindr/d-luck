@@ -20,7 +20,7 @@ const LocationSection = React.createClass({
         <div className={styles.mapLocationContainer}>
           <div className={styles.col} style={{ width: '45%' }}>
             <h2>{'SINGHA D\'LUCK Cinematic Theatre'}</h2>
-            <span style={{ fontWeight: 400 }}>สิงห์ดีลักษณ์ ซีนีมาติก เธียเตอร์</span>
+            <span style={{ fontWeight: 400 }}>สิงห์ ดีลักษณ์ ซีนีมาติก เธียเตอร์</span>
           </div>
           <div className={styles.col} style={{ width: '30%', fontSize: '12px' }}>
             <img src={require('../assets/images/location-icon.png')} className={styles.icon} />
