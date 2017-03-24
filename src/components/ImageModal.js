@@ -77,9 +77,9 @@ const ImageModalBox = React.createClass({
         <div className={styles.container}>
           <div className={styles.caption}>THIS IS A CAPTION</div>
           <img src={require('../assets/images/closeButtonBlack.png')} className={styles.closeButton} onClick={this.closeModal} />
-          <img src={require('../assets/images/next.png')} className={styles.arrowLeft} onClick={this.onClickPrev} />
+          <img src={require('../assets/images/arrow.png')} className={styles.arrowLeft} onClick={this.onClickPrev} />
           <img src={this.props.images ? this.props.images[this.state.current].url : this.props.image} className={styles.imageShow} />
-          <img src={require('../assets/images/next.png')} className={styles.arrowRight} onClick={this.onClickNext} />
+          <img src={require('../assets/images/arrow.png')} className={styles.arrowRight} onClick={this.onClickNext} />
         </div>
       </Modal>
     )

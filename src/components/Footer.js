@@ -58,7 +58,7 @@ const Footer = React.createClass({
     this.setState({isModalOpen: false})
   },
   onClickToTop () {
-    window.scrollTo(0, 0)
+    $('#app').scrollTop(0)
   },
   render () {
     return (
